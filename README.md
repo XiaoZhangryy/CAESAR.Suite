@@ -38,9 +38,9 @@ In addition, once the co-embeddings of (multiple) dataset are estimated by CAESA
 * Visualize the signature genes on UMAP space.
 
 # Installation
-"CAESAR" depends on the 'Rcpp' and 'RcppArmadillo' package, which requires appropriate setup of computer. For the users that have set up system properly for compiling C++ files, the following installation command will work.
+"CAESAR" depends on the `Rcpp` and `RcppArmadillo` package, which requires appropriate setup of computer. For the users that have set up system properly for compiling C++ files, the following installation command will work.
 ```{Rmd}
-# Method 1: install CAESAR from CRAN
+# Method 1: Install CAESAR from CRAN
 install.packages('CAESAR')
 
 # For the newest version of CAESAR, users can use method 2 for installation.
@@ -49,10 +49,10 @@ if (!require("remotes", quietly = TRUE))
     install.packages("remotes")
 remotes::install_github("XiaoZhangryy/CAESAR")
 
-# If some dependent packages (such as `scater`) on Bioconductor can not be installed nomrally, use following commands, then run abouve command.
+# If some dependent packages (such as `scater`) on Bioconductor cannot be installed normally, use the following commands, then run the above command.
 if (!require("BiocManager", quietly = TRUE)) ## install BiocManager
     install.packages("BiocManager")
-# install the package on Bioconducter
+# Install the package on Bioconductor
 BiocManager::install(c("scater"))
 ```
 
@@ -76,7 +76,6 @@ Second, install "gfortran" for compiling C++ and Fortran at [here](https://githu
 ## Setup on Linux  system
 If you use conda environment on Linux system and some dependent packages (such as `scater`) can not normally installed, you can search R package at anaconda.org website. We take the `scater` package as example, and its search result is https://anaconda.org/bioconda/bioconductor-scater. Then you can install it in conda environment by following command.
 ```{Linux}
-
 conda install -c bioconda bioconductor-scater
 ```
 For the user not using conda environment, if  dependent packages (such as `scater`) not normally installed are in Bioconductor, then use the following command to install the dependent packages.

@@ -36,7 +36,6 @@ githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/master/vignettes_data/
 download.file(githubURL, "MOB_scRNA.rda", mode='wb')
 load("./MOB_scRNA.rda")
 
-data(MOB_scRNA)
 print(MOB_scRNA)
 ```
 

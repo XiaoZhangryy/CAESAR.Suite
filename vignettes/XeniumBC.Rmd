@@ -25,7 +25,16 @@ This vignette introduces the CAESAR workflow for the analysis of Xenium BC spati
 * Downstream analysis (i.e. , signature gene analysis, visualization of cell types and coembeddings)
 
 ## Load and quality control both reference and target data
-We demonstrate the application of CAESAR to Xenium data. In this vignette, the input data includes: `BC_scRNAList` — two scRNA-seq reference datasets, each with 3,000 cells; `BC_XeniumList` — two Xenium target datasets, each with 3,000 cells; and `BC_feature_imgList` — two feature matrices containing histology image information from the Xenium target datasets. For more details with respect to histology image feature extraction, see xxx. The genes of scRNA-seq reference datasets and Xenium target datasets are aligned. Those data can be downloaded and load to the current working path by the following command:
+We demonstrate the application of CAESAR to Xenium data. In this vignette, the input data includes: `BC_scRNAList` — two scRNA-seq reference datasets, each with 3,000 cells; `BC_XeniumList` — two Xenium target datasets, each with 3,000 cells; and `BC_feature_imgList` — two feature matrices containing histology image information from the Xenium target datasets. For more details with respect to histology image feature extraction, see xxx. The genes of scRNA-seq reference datasets and Xenium target datasets are aligned. The package can be loaded with the command:
+```{r}
+set.seed(1) # set a random seed for reproducibility.
+library(CAESAR) # load the package of CAESAR method
+library(Seurat)
+library(ProFAST)
+library(ggplot2)
+```
+
+Those data can be downloaded and load to the current working path by the following command:
 ```{r}
 githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/master/vignettes_data/BC_scRNAList.rda?raw=true"
 download.file(githubURL, "BC_scRNAList.rda", mode='wb')
@@ -44,15 +53,6 @@ download.file(githubURL, "BC_feature_imgList.rda", mode='wb')
 load("./BC_feature_imgList.rda")
 
 print(sapply(BC_feature_imgList, dim))
-```
-
-The package can be loaded with the command:
-```{r}
-set.seed(1) # set a random seed for reproducibility.
-library(CAESAR) # load the package of CAESAR method
-library(Seurat)
-library(ProFAST)
-library(ggplot2)
 ```
 
 Users can perform appropriate quality control on the reference dataset and target datasets. Genes expressed in less than one cell are required to remove to avoid unknown errors. Other quality control steps can be set by the user according to the data quality. Here, since scRNA-seq reference datasets and Xenium target datasets had been aligned, we do not perform quality control.
