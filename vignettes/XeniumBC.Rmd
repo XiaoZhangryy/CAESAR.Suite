@@ -29,19 +29,19 @@ We demonstrate the application of CAESAR to Xenium data. In this vignette, the i
 ```{r}
 githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/master/vignettes_data/BC_scRNAList.rda?raw=true"
 download.file(githubURL, "BC_scRNAList.rda", mode='wb')
-BC_scRNAList <- readRDS("./BC_scRNAList.RDS")
+load("./BC_scRNAList.rda")
 
 print(BC_scRNAList)
 
 githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/master/vignettes_data/BC_XeniumList.rda?raw=true"
 download.file(githubURL, "BC_XeniumList.rda", mode='wb')
-BC_XeniumList <- readRDS("./BC_XeniumList.RDS")
+load("./BC_XeniumList.rda")
 
 print(BC_XeniumList)
 
 githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/master/vignettes_data/BC_feature_imgList.rda?raw=true"
 download.file(githubURL, "BC_feature_imgList.rda", mode='wb')
-BC_feature_imgList <- readRDS("./BC_feature_imgList.RDS")
+load("./BC_feature_imgList.rda")
 
 print(sapply(BC_feature_imgList, dim))
 ```
