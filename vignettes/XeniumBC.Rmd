@@ -27,17 +27,17 @@ This vignette introduces the CAESAR workflow for the analysis of Xenium BC spati
 ## Load and quality control both reference and target data
 We demonstrate the application of CAESAR to Xenium data. In this vignette, the input data includes: `BC_scRNAList` — two scRNA-seq reference datasets, each with 3,000 cells; `BC_XeniumList` — two Xenium target datasets, each with 3,000 cells; and `BC_feature_imgList` — two feature matrices containing histology image information from the Xenium target datasets. For more details with respect to histology image feature extraction, see xxx. The genes of scRNA-seq reference datasets and Xenium target datasets are aligned. Those data can be downloaded and load to the current working path by the following command:
 ```{r}
-githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/main/vignettes_data/BC_scRNAList.rda?raw=true"
+githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/master/vignettes_data/BC_scRNAList.rda?raw=true"
 download.file(githubURL, "BC_scRNAList.rda", mode='wb')
 
 print(BC_scRNAList)
 
-githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/main/vignettes_data/BC_XeniumList.rda?raw=true"
+githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/master/vignettes_data/BC_XeniumList.rda?raw=true"
 download.file(githubURL, "BC_XeniumList.rda", mode='wb')
 
 print(BC_XeniumList)
 
-githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/main/vignettes_data/BC_feature_imgList.rda?raw=true"
+githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/master/vignettes_data/BC_feature_imgList.rda?raw=true"
 download.file(githubURL, "BC_feature_imgList.rda", mode='wb')
 
 print(sapply(BC_feature_imgList, dim))

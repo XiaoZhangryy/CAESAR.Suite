@@ -26,12 +26,12 @@ This vignette introduces the CAESAR workflow for the analysis of MOB ST spatial 
 ## Load and quality control both reference and target data
 We demonstrate the use of CAESAR to MOB data, which can be downloaded and load to the current working path by the following command:
 ```{r}
-githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/main/vignettes_data/MOB_ST.rda?raw=true"
+githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/master/vignettes_data/MOB_ST.rda?raw=true"
 download.file(githubURL, "MOB_ST.rda", mode='wb')
 
 print(MOB_ST)
 
-githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/main/vignettes_data/MOB_scRNA.rda?raw=true"
+githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/master/vignettes_data/MOB_scRNA.rda?raw=true"
 download.file(githubURL, "MOB_scRNA.rda", mode='wb')
 
 data(MOB_scRNA)
