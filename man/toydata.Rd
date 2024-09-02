@@ -1,5 +1,10 @@
 \name{toydata}
 \alias{toydata}
+\alias{seu}
+\alias{pos}
+\alias{pathway_list}
+\alias{markers}
+\alias{imgf}
 \title{A toy dataset to run examples}
 \description{
   A toy dataset to run examples in this package.
