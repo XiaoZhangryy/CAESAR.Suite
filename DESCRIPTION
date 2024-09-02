@@ -38,8 +38,17 @@ Repository: github
 Encoding: UTF-8
 LazyData: true
 LazyDataCompression: xz
-VignetteBuilder: knitr, rmarkdown
-Suggests: knitr, rmarkdown
+VignetteBuilder: 
+    knitr,
+    rmarkdown
+Suggests: 
+    knitr,
+    rmarkdown,
+    cowplot,
+    scales,
+    tibble,
+    dplyr,
+    msigdbr
 URL: https://github.com/XiaoZhangryy/CAESAR
 BugReports: https://github.com/XiaoZhangryy/CAESAR/issues
 RoxygenNote: 7.3.2

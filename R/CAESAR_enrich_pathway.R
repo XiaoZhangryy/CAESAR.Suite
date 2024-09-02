@@ -273,7 +273,6 @@ pathway.rgTest <- function(
     perm.num = 0, progress_bar = FALSE, ncores = 20, eta = 1e-4,
     parallel = TRUE) {
     wei.fun <- match.arg(wei.fun)
-    # require("rgTest")
     coembed.scale <- scale(coembed[genes.use, ])
 
     gene.set.list.cut <- lapply(gene.set.list, function(gene.set) intersect(gene.set, genes.use))
