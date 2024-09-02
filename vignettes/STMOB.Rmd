@@ -28,11 +28,13 @@ We demonstrate the use of CAESAR to MOB data, which can be downloaded and load t
 ```{r}
 githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/master/vignettes_data/MOB_ST.rda?raw=true"
 download.file(githubURL, "MOB_ST.rda", mode='wb')
+MOB_ST <- readRDS("./MOB_ST.RDS")
 
 print(MOB_ST)
 
 githubURL <- "https://github.com/XiaoZhangryy/CAESAR/blob/master/vignettes_data/MOB_scRNA.rda?raw=true"
 download.file(githubURL, "MOB_scRNA.rda", mode='wb')
+MOB_scRNA <- readRDS("./MOB_scRNA.RDS")
 
 data(MOB_scRNA)
 print(MOB_scRNA)
