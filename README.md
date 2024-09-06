@@ -10,7 +10,7 @@
 
 CAESAR suite is an open-source software package that provides image-based spatial co-embedding of locations and genomic features. The 'CAESAR.Suite' package is specifically developed by the Jin Liu's lab for annotation and enrichment analysis of spatially resolved transcriptomics (SRT) dataset. It uniquely transfers labels from scRNA-seq reference, enabling the annotation of spatial omics datasets across different technologies, resolutions, species, and modalities, based on the conserved relationship between signature genes and cells/locations at an appropriate level of granularity. Notably, CAESAR enriches location-level pathways, allowing for the detection of gradual biological pathway activation within spatially defined domain types. 
 
-Check out  our [Package Website](https://XiaoZhangryy.github.io/CAESAR/index.html) for a more complete description of the methods and analyses. 
+Check out  our [Package Website](https://XiaoZhangryy.github.io/CAESAR.Suite/index.html) for a more complete description of the methods and analyses. 
 
 CAESAR provides image-based spatial aware co-embedding of locations and genomic features.
 
