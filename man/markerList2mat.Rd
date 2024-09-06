@@ -18,6 +18,8 @@ This function converts a list of marker genes for different cell types or cluste
 \examples{
 data(toydata)
 
+markers <- toydata$markers
+
 marker.freq <- markerList2mat(list(markers))
 print(marker.freq)
 

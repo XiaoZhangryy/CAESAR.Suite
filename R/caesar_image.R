@@ -257,6 +257,10 @@ cellembedding_image_seurat <- function(
 #' @examples 
 #' data(toydata)
 #' 
+#' seu <- toydata$seu
+#' pos <- toydata$pos
+#' imgf <- toydata$imgf
+#' 
 #' seu <- CAESAR.coembedding.image(seu, imgf, pos)
 #' print(seu)
 CAESAR.coembedding.image <- function(

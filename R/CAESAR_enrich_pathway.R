@@ -371,6 +371,9 @@ pathway.rgTest <- function(
 #' @examples 
 #' data(toydata)
 #' 
+#' seu <- toydata$seu
+#' pathway_list <- toydata$pathway_list
+#' 
 #' CAESAR.enrich.pathway(seu, pathway_list)
 CAESAR.enrich.pathway <- function(
     seu, pathway.list, reduction = "caesar", pathway.cutoff = 3,

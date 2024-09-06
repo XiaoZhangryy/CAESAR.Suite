@@ -32,6 +32,9 @@ This function performs batch correction and integration of multiple Seurat objec
 \examples{
 data(toydata)
 
+seu <- toydata$seu
+markers <- toydata$markers
+
 seu <- ProFAST::pdistance(seu, reduction = "caesar")
 
 marker.freq <- markerList2mat(list(markers))

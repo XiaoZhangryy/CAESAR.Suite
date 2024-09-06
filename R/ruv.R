@@ -162,6 +162,9 @@ get_sampleID <- function(XList) {
 #'
 #' @examples
 #' data(toydata)
+#' 
+#' seu <- toydata$seu
+#' markers <- toydata$markers
 #'
 #' seu <- ProFAST::pdistance(seu, reduction = "caesar")
 #'
@@ -245,8 +248,8 @@ CAESAR.RUV <- function(seuList, distList, verbose = FALSE, species = "human", cu
     # Determine housekeeping genes based on species
     genelist <- colnames(XList[[1]])
     houseKeep <- switch(species,
-        human = intersect(toupper(genelist), CAESAR::Human_HK_genes$Gene),
-        mouse = intersect(firstup(genelist), CAESAR::Mouse_HK_genes$Gene),
+        human = intersect(toupper(genelist), CAESAR.Suite::Human_HK_genes$Gene),
+        mouse = intersect(firstup(genelist), CAESAR.Suite::Mouse_HK_genes$Gene),
         character()
     )
 

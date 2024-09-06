@@ -16,6 +16,9 @@
 #' @examples
 #' data(toydata)
 #' 
+#' seu <- toydata$seu
+#' pathway_list <- toydata$pathway_list
+#' 
 #' enrich.score <- CAESAR.enrich.score(seu, pathway_list)
 #' head(enrich.score)
 #'
@@ -170,6 +173,9 @@ Cauchy.Combination <- function(pvals, weight = NULL) {
 #'
 #' @examples
 #' data(toydata)
+#' 
+#' seu <- toydata$seu
+#' pathway_list <- toydata$pathway_list
 #' 
 #' enrich.score <- CAESAR.enrich.score(seu, pathway_list)
 #' dep.pvals <- CAESAR.CTDEP(seu, enrich.score)

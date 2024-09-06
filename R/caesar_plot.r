@@ -16,6 +16,8 @@
 #' @examples
 #' data(toydata)
 #' 
+#' seu <- toydata$seu
+#' 
 #' seu <- ProFAST::pdistance(seu, reduction = "caesar")
 #' sglist <- find.sig.genes(seu = seu)
 #' top2sgs <- Intsg(list(sglist), ntop = 2)
@@ -163,6 +165,8 @@ Intsg <- function(sg_List, ntop, ct_ratio = NULL, expr.prop.cutoff = 0.1, specie
 #' @examples
 #' data(toydata)
 #' 
+#' seu <- toydata$seu
+#' 
 #' seu <- CoUMAP(seu, gene.set = rownames(seu))
 #' print(seu)
 CoUMAP <- function(
@@ -263,6 +267,8 @@ CoUMAP <- function(
 #'
 #' @examples
 #' data(toydata)
+#' 
+#' seu <- toydata$seu
 #' 
 #' seu <- CoUMAP(seu, gene.set = rownames(seu))
 #' CoUMAP.plot(seu)

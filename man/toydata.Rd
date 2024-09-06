@@ -1,10 +1,5 @@
 \name{toydata}
 \alias{toydata}
-\alias{seu}
-\alias{pos}
-\alias{pathway_list}
-\alias{markers}
-\alias{imgf}
 \title{A toy dataset to run examples}
 \description{
   A toy dataset to run examples in this package.
@@ -23,5 +18,5 @@
 }
 
 \value{
-  An R data containing the above components.
+  A list containing the above components.
 }

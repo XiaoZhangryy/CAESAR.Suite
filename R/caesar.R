@@ -17,10 +17,13 @@
 #' @importFrom Matrix as.matrix
 #' @importFrom methods is
 #' @import Rcpp
-#' @useDynLib CAESAR, .registration = TRUE
+#' @useDynLib CAESAR.Suite, .registration = TRUE
 #'
 #' @examples
 #' data(toydata)
+#' 
+#' seu <- toydata$seu
+#' pos <- toydata$pos
 #' 
 #' adjm <- ProFAST::AddAdj(as.matrix(pos))
 #' seu <- add.gene.embedding(
@@ -89,11 +92,14 @@ add.gene.embedding <- function(
 #'
 #' @importFrom Matrix t
 #' @importFrom ProFAST FAST_run
-#' @useDynLib CAESAR, .registration = TRUE
+#' @useDynLib CAESAR.Suite, .registration = TRUE
 #' 
 #' @export 
 #' @examples 
 #' data(toydata)
+#' 
+#' seu <- toydata$seu
+#' pos <- toydata$pos
 #' 
 #' adjm <- ProFAST::AddAdj(as.matrix(pos))
 #' X <- Seurat::GetAssayData(object = seu, slot = "data", assay = "RNA")
@@ -147,11 +153,14 @@ cellembedding_matrix <- function(
 #'
 #' @importFrom Seurat GetAssayData DefaultAssay CreateDimReducObject
 #' @importFrom Matrix as.matrix
-#' @useDynLib CAESAR, .registration = TRUE
+#' @useDynLib CAESAR.Suite, .registration = TRUE
 #' 
 #' @export 
 #' @examples 
 #' data(toydata)
+#' 
+#' seu <- toydata$seu
+#' pos <- toydata$pos
 #' 
 #' adjm <- ProFAST::AddAdj(as.matrix(pos))
 #' seu <- cellembedding_seurat(
@@ -222,10 +231,14 @@ cellembedding_seurat <- function(
 #' \code{\link{add.gene.embedding}} for adding gene embeddings to a Seurat object.
 #'
 #' @importFrom stats dist median
+#' @importFrom ProFAST AddAdj
 #' @export
 #' 
 #' @examples 
 #' data(toydata)
+#' 
+#' seu <- toydata$seu
+#' pos <- toydata$pos
 #' 
 #' seu <- CAESAR.coembedding(
 #'     seu = seu,

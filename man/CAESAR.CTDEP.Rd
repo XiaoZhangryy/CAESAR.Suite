@@ -38,6 +38,9 @@ This function tests whether specific pathways are differentially enriched in par
 \examples{
 data(toydata)
 
+seu <- toydata$seu
+pathway_list <- toydata$pathway_list
+
 enrich.score <- CAESAR.enrich.score(seu, pathway_list)
 dep.pvals <- CAESAR.CTDEP(seu, enrich.score)
 print(dep.pvals)

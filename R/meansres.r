@@ -96,6 +96,8 @@ auc <- function(celltype, pathway.scores, return.mean = TRUE) {
 #' library(Seurat)
 #' data(toydata)
 #' 
+#' seu <- toydata$seu
+#' 
 #' seu$cluster <- Idents(seu)
 #' 
 #' gclink <- data.frame(

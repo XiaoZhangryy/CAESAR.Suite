@@ -1,14 +1,14 @@
-# CAESAR
+# CAESAR.Suite
 
 =========================================================================
 <!-- badges: start -->
 
-[![](https://www.r-pkg.org/badges/version-ago/CAESAR)](https://cran.r-project.org/package=CAESAR)
-[![](https://cranlogs.r-pkg.org/badges/CAESAR?color=orange)](https://cran.r-project.org/package=CAESAR)
-[![](https://cranlogs.r-pkg.org/badges/grand-total/CAESAR?color=orange)](https://cran.r-project.org/package=CAESAR)
+[![](https://www.r-pkg.org/badges/version-ago/CAESAR.Suite)](https://cran.r-project.org/package=CAESAR.Suite)
+[![](https://cranlogs.r-pkg.org/badges/CAESAR.Suite?color=orange)](https://cran.r-project.org/package=CAESAR.Suite)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/CAESAR.Suite?color=orange)](https://cran.r-project.org/package=CAESAR.Suite)
 <!-- badges: end -->
 
-CAESAR suite is an open-source software package that provides image-based spatial co-embedding of locations and genomic features. The 'CAESAR' package is specifically developed by the Jin Liu's lab for annotation and enrichment analysis of spatially resolved transcriptomics (SRT) dataset. It uniquely transfers labels from scRNA-seq reference, enabling the annotation of spatial omics datasets across different technologies, resolutions, species, and modalities, based on the conserved relationship between signature genes and cells/locations at an appropriate level of granularity. Notably, CAESAR enriches location-level pathways, allowing for the detection of gradual biological pathway activation within spatially defined domain types. 
+CAESAR suite is an open-source software package that provides image-based spatial co-embedding of locations and genomic features. The 'CAESAR.Suite' package is specifically developed by the Jin Liu's lab for annotation and enrichment analysis of spatially resolved transcriptomics (SRT) dataset. It uniquely transfers labels from scRNA-seq reference, enabling the annotation of spatial omics datasets across different technologies, resolutions, species, and modalities, based on the conserved relationship between signature genes and cells/locations at an appropriate level of granularity. Notably, CAESAR enriches location-level pathways, allowing for the detection of gradual biological pathway activation within spatially defined domain types. 
 
 Check out  our [Package Website](https://XiaoZhangryy.github.io/CAESAR/index.html) for a more complete description of the methods and analyses. 
 
@@ -38,16 +38,16 @@ In addition, once the co-embeddings of (multiple) dataset are estimated by CAESA
 * Visualize the signature genes on UMAP space.
 
 # Installation
-"CAESAR" depends on the `Rcpp` and `RcppArmadillo` package, which requires appropriate setup of computer. For the users that have set up system properly for compiling C++ files, the following installation command will work.
+"CAESAR.Suite" depends on the `Rcpp` and `RcppArmadillo` package, which requires appropriate setup of computer. For the users that have set up system properly for compiling C++ files, the following installation command will work.
 ```{Rmd}
-# Method 1: Install CAESAR from CRAN
-install.packages('CAESAR')
+# Method 1: Install CAESAR.Suite from CRAN
+install.packages('CAESAR.Suite')
 
-# For the newest version of CAESAR, users can use method 2 for installation.
-# Method 2: Install CAESAR from Github
+# For the newest version of CAESAR.Suite, users can use method 2 for installation.
+# Method 2: Install CAESAR.Suite from Github
 if (!require("remotes", quietly = TRUE))
     install.packages("remotes")
-remotes::install_github("XiaoZhangryy/CAESAR")
+remotes::install_github("XiaoZhangryy/CAESAR.Suite")
 
 # If some dependent packages (such as `scater`) on Bioconductor cannot be installed normally, use the following commands, then run the above command.
 if (!require("BiocManager", quietly = TRUE)) ## install BiocManager
@@ -61,8 +61,8 @@ For usage examples and guided walkthroughs, check the `vignettes` directory of t
 
 Tutorials for CAESAR suite:
 
-* [Analysis for Xenium breast cancer data](https://XiaoZhangryy.github.io/CAESAR/articles/XeniumBC.html)
-* [Analysis for ST mouse olfactory bulb data](https://XiaoZhangryy.github.io/CAESAR/articles/STMOB.html)
+* [Analysis for Xenium breast cancer data](https://XiaoZhangryy.github.io/CAESAR.Suite/articles/XeniumBC.html)
+* [Analysis for ST mouse olfactory bulb data](https://XiaoZhangryy.github.io/CAESAR.Suite/articles/STMOB.html)
 
 For the users that don't have set up system properly, the following setup on different systems can be referred.
 ## Setup on Windows system
@@ -94,9 +94,9 @@ install.packages("ProFAST")
 
 # Demonstration
 
-For an example of typical CAESAR usage, please see our [Package Website](https://XiaoZhangryy.github.io/CAESAR/index.html) for a demonstration and overview of the functions included in CAESAR.
+For an example of typical CAESAR.Suite usage, please see our [Package Website](https://XiaoZhangryy.github.io/CAESAR.Suite/index.html) for a demonstration and overview of the functions included in CAESAR.Suite.
 
 # NEWs
-* CAESAR version 0.1 (2024-08-30)
+* CAESAR.Suite version 0.1 (2024-09-06)
 
 

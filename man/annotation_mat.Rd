@@ -55,6 +55,9 @@ This function annotates cells based on a cell-gene distance matrix and marker ge
 \examples{
 data(toydata)
 
+seu <- toydata$seu
+markers <- toydata$markers
+
 seu <- ProFAST::pdistance(seu, reduction = "caesar")
 distce <- Seurat::GetAssayData(object = seu, slot = "data", assay = "distce")
 

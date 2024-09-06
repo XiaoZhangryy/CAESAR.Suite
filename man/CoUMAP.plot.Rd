@@ -65,6 +65,8 @@ The function creates a UMAP plot that shows both gene and cell embeddings. Gene 
 \examples{
 data(toydata)
 
+seu <- toydata$seu
+
 seu <- CoUMAP(seu, gene.set = rownames(seu))
 CoUMAP.plot(seu)
 

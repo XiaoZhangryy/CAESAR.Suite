@@ -59,6 +59,9 @@ This function annotates cells in a Seurat object using marker gene frequencies a
 \examples{
 data(toydata)
 
+seu <- toydata$seu
+markers <- toydata$markers
+
 marker.freq <- markerList2mat(list(markers))
 anno_res <- CAESAR.annotation(seu, marker.freq, cal.confidence = FALSE, cal.proportions = FALSE)
 str(anno_res)

@@ -1,11 +1,11 @@
-Package: CAESAR
+Package: CAESAR.Suite
 Type: Package
-Title: CAESAR: a cross-technology and cross-resolution framework for spatial omics annotation
+Title: CAESAR: a Cross-Technology and Cross-Resolution Framework for Spatial Omics Annotation
 Version: 0.1.0
 Authors@R: c(person(given = "Xiao", family = "Zhang", email = "zhangxiao1994@cuhk.edu.cn", role = c("aut","cre")),
              person(given = "Wei", family = "Liu", role = "aut"),
              person(given = "Jin", family = "Liu", role = "aut"))
-Author: Xiao Zhang [aut,cre],
+Author: Xiao Zhang [aut, cre],
         Wei Liu [aut], 
         Jin Liu [aut]
 Maintainer: Xiao Zhang <zhangxiao1994@cuhk.edu.cn>
@@ -49,7 +49,7 @@ Suggests:
     tibble,
     dplyr,
     msigdbr
-URL: https://github.com/XiaoZhangryy/CAESAR
-BugReports: https://github.com/XiaoZhangryy/CAESAR/issues
+URL: https://github.com/XiaoZhangryy/CAESAR.Suite
+BugReports: https://github.com/XiaoZhangryy/CAESAR.Suite/issues
 RoxygenNote: 7.3.2
 NeedsCompilation: yes

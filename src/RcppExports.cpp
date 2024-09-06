@@ -13,7 +13,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // gene_embed_weight_cpp
 arma::mat gene_embed_weight_cpp(const arma::mat& X, const arma::mat& ce_cell, const arma::sp_mat& adj, const double c);
-RcppExport SEXP _CAESAR_gene_embed_weight_cpp(SEXP XSEXP, SEXP ce_cellSEXP, SEXP adjSEXP, SEXP cSEXP) {
+RcppExport SEXP _CAESAR_Suite_gene_embed_weight_cpp(SEXP XSEXP, SEXP ce_cellSEXP, SEXP adjSEXP, SEXP cSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -27,7 +27,7 @@ END_RCPP
 }
 // wpcaCpp
 Rcpp::List wpcaCpp(const arma::mat& X, const int& nPCs, const bool& weighted);
-RcppExport SEXP _CAESAR_wpcaCpp(SEXP XSEXP, SEXP nPCsSEXP, SEXP weightedSEXP) {
+RcppExport SEXP _CAESAR_Suite_wpcaCpp(SEXP XSEXP, SEXP nPCsSEXP, SEXP weightedSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -40,7 +40,7 @@ END_RCPP
 }
 // getneighborhood_fastcpp
 arma::sp_umat getneighborhood_fastcpp(const arma::mat x, double radius);
-RcppExport SEXP _CAESAR_getneighborhood_fastcpp(SEXP xSEXP, SEXP radiusSEXP) {
+RcppExport SEXP _CAESAR_Suite_getneighborhood_fastcpp(SEXP xSEXP, SEXP radiusSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -52,7 +52,7 @@ END_RCPP
 }
 // pdistance_cpp
 arma::mat pdistance_cpp(const arma::mat& Ar, const arma::mat& Br, const float& eta);
-RcppExport SEXP _CAESAR_pdistance_cpp(SEXP ArSEXP, SEXP BrSEXP, SEXP etaSEXP) {
+RcppExport SEXP _CAESAR_Suite_pdistance_cpp(SEXP ArSEXP, SEXP BrSEXP, SEXP etaSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -65,7 +65,7 @@ END_RCPP
 }
 // gene_embed_cpp
 arma::mat gene_embed_cpp(const arma::mat& X, const arma::mat& ce_cell);
-RcppExport SEXP _CAESAR_gene_embed_cpp(SEXP XSEXP, SEXP ce_cellSEXP) {
+RcppExport SEXP _CAESAR_Suite_gene_embed_cpp(SEXP XSEXP, SEXP ce_cellSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -77,7 +77,7 @@ END_RCPP
 }
 // weightAdj
 arma::sp_mat weightAdj(const arma::mat& pos, const arma::mat& img_embed, const double& radius, const double& width);
-RcppExport SEXP _CAESAR_weightAdj(SEXP posSEXP, SEXP img_embedSEXP, SEXP radiusSEXP, SEXP widthSEXP) {
+RcppExport SEXP _CAESAR_Suite_weightAdj(SEXP posSEXP, SEXP img_embedSEXP, SEXP radiusSEXP, SEXP widthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -91,7 +91,7 @@ END_RCPP
 }
 // getneighbor_weightmat
 arma::sp_mat getneighbor_weightmat(const arma::mat x, const double& radius, const double& width);
-RcppExport SEXP _CAESAR_getneighbor_weightmat(SEXP xSEXP, SEXP radiusSEXP, SEXP widthSEXP) {
+RcppExport SEXP _CAESAR_Suite_getneighbor_weightmat(SEXP xSEXP, SEXP radiusSEXP, SEXP widthSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -104,7 +104,7 @@ END_RCPP
 }
 // imFactorCpp
 Rcpp::List imFactorCpp(const arma::mat& X, const arma::sp_mat& weiAdj, const arma::vec& w_plus, const arma::vec& mu_int, const arma::mat& B_int, const arma::vec& Lam_int, const arma::mat& Phi_int, const arma::mat& M_int, const arma::cube& R_int, const int& maxIter, const double& epsELBO, const bool& verbose, const bool& Phi_diag);
-RcppExport SEXP _CAESAR_imFactorCpp(SEXP XSEXP, SEXP weiAdjSEXP, SEXP w_plusSEXP, SEXP mu_intSEXP, SEXP B_intSEXP, SEXP Lam_intSEXP, SEXP Phi_intSEXP, SEXP M_intSEXP, SEXP R_intSEXP, SEXP maxIterSEXP, SEXP epsELBOSEXP, SEXP verboseSEXP, SEXP Phi_diagSEXP) {
+RcppExport SEXP _CAESAR_Suite_imFactorCpp(SEXP XSEXP, SEXP weiAdjSEXP, SEXP w_plusSEXP, SEXP mu_intSEXP, SEXP B_intSEXP, SEXP Lam_intSEXP, SEXP Phi_intSEXP, SEXP M_intSEXP, SEXP R_intSEXP, SEXP maxIterSEXP, SEXP epsELBOSEXP, SEXP verboseSEXP, SEXP Phi_diagSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -127,7 +127,7 @@ END_RCPP
 }
 // approxPhi_imFactorCpp
 Rcpp::List approxPhi_imFactorCpp(const arma::mat& X, const arma::sp_mat& weiAdj, const arma::vec& mu_int, const arma::mat& B_int, const arma::vec& Lam_int, const arma::mat& Phi_int, const arma::mat& M_int, const arma::mat& R_int, const int& maxIter, const double& epsELBO, const bool& verbose, const bool& Phi_diag);
-RcppExport SEXP _CAESAR_approxPhi_imFactorCpp(SEXP XSEXP, SEXP weiAdjSEXP, SEXP mu_intSEXP, SEXP B_intSEXP, SEXP Lam_intSEXP, SEXP Phi_intSEXP, SEXP M_intSEXP, SEXP R_intSEXP, SEXP maxIterSEXP, SEXP epsELBOSEXP, SEXP verboseSEXP, SEXP Phi_diagSEXP) {
+RcppExport SEXP _CAESAR_Suite_approxPhi_imFactorCpp(SEXP XSEXP, SEXP weiAdjSEXP, SEXP mu_intSEXP, SEXP B_intSEXP, SEXP Lam_intSEXP, SEXP Phi_intSEXP, SEXP M_intSEXP, SEXP R_intSEXP, SEXP maxIterSEXP, SEXP epsELBOSEXP, SEXP verboseSEXP, SEXP Phi_diagSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -149,19 +149,19 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_CAESAR_gene_embed_weight_cpp", (DL_FUNC) &_CAESAR_gene_embed_weight_cpp, 4},
-    {"_CAESAR_wpcaCpp", (DL_FUNC) &_CAESAR_wpcaCpp, 3},
-    {"_CAESAR_getneighborhood_fastcpp", (DL_FUNC) &_CAESAR_getneighborhood_fastcpp, 2},
-    {"_CAESAR_pdistance_cpp", (DL_FUNC) &_CAESAR_pdistance_cpp, 3},
-    {"_CAESAR_gene_embed_cpp", (DL_FUNC) &_CAESAR_gene_embed_cpp, 2},
-    {"_CAESAR_weightAdj", (DL_FUNC) &_CAESAR_weightAdj, 4},
-    {"_CAESAR_getneighbor_weightmat", (DL_FUNC) &_CAESAR_getneighbor_weightmat, 3},
-    {"_CAESAR_imFactorCpp", (DL_FUNC) &_CAESAR_imFactorCpp, 13},
-    {"_CAESAR_approxPhi_imFactorCpp", (DL_FUNC) &_CAESAR_approxPhi_imFactorCpp, 12},
+    {"_CAESAR_Suite_gene_embed_weight_cpp", (DL_FUNC) &_CAESAR_Suite_gene_embed_weight_cpp, 4},
+    {"_CAESAR_Suite_wpcaCpp", (DL_FUNC) &_CAESAR_Suite_wpcaCpp, 3},
+    {"_CAESAR_Suite_getneighborhood_fastcpp", (DL_FUNC) &_CAESAR_Suite_getneighborhood_fastcpp, 2},
+    {"_CAESAR_Suite_pdistance_cpp", (DL_FUNC) &_CAESAR_Suite_pdistance_cpp, 3},
+    {"_CAESAR_Suite_gene_embed_cpp", (DL_FUNC) &_CAESAR_Suite_gene_embed_cpp, 2},
+    {"_CAESAR_Suite_weightAdj", (DL_FUNC) &_CAESAR_Suite_weightAdj, 4},
+    {"_CAESAR_Suite_getneighbor_weightmat", (DL_FUNC) &_CAESAR_Suite_getneighbor_weightmat, 3},
+    {"_CAESAR_Suite_imFactorCpp", (DL_FUNC) &_CAESAR_Suite_imFactorCpp, 13},
+    {"_CAESAR_Suite_approxPhi_imFactorCpp", (DL_FUNC) &_CAESAR_Suite_approxPhi_imFactorCpp, 12},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_CAESAR(DllInfo *dll) {
+RcppExport void R_init_CAESAR_Suite(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }

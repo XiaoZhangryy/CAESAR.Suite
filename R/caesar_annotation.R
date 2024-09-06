@@ -22,6 +22,8 @@
 #' @examples 
 #' data(toydata)
 #' 
+#' seu <- toydata$seu
+#' 
 #' seu <- ProFAST::pdistance(seu, reduction = "caesar")
 #' sglist <- find.sig.genes(
 #'     seu = seu
@@ -114,6 +116,8 @@ find.sig.genes <- function(
 #' @examples 
 #' data(toydata)
 #' 
+#' seu <- toydata$seu
+#' 
 #' seu <- ProFAST::pdistance(seu, reduction = "caesar")
 #' sglist <- find.sig.genes(seu = seu)
 #' 
@@ -201,6 +205,8 @@ marker.select <- function(
 #' @examples
 #' data(toydata)
 #' 
+#' markers <- toydata$markers
+#' 
 #' marker.freq <- markerList2mat(list(markers))
 #' print(marker.freq)
 #'
@@ -280,6 +286,9 @@ markerList2mat <- function(markerList) {
 #'
 #' @examples 
 #' data(toydata)
+#' 
+#' seu <- toydata$seu
+#' markers <- toydata$markers
 #' 
 #' seu <- ProFAST::pdistance(seu, reduction = "caesar")
 #' distce <- Seurat::GetAssayData(object = seu, slot = "data", assay = "distce")
@@ -405,11 +414,15 @@ annotation_mat <- function(
 #' @examples
 #' data(toydata)
 #' 
+#' seu <- toydata$seu
+#' markers <- toydata$markers
+#' 
 #' marker.freq <- markerList2mat(list(markers))
 #' anno_res <- CAESAR.annotation(seu, marker.freq, cal.confidence = FALSE, cal.proportions = FALSE)
 #' str(anno_res)
 #'
 #' @importFrom Seurat AddMetaData GetAssayData Assays
+#' @importFrom ProFAST pdistance
 #' @export
 CAESAR.annotation <- function(
     seu, marker.freq, reduction.name = "caesar", assay.dist = "distce",

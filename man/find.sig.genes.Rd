@@ -40,6 +40,8 @@ This function identifies signature genes for each cell type or cell group in a S
 \examples{
 data(toydata)
 
+seu <- toydata$seu
+
 seu <- ProFAST::pdistance(seu, reduction = "caesar")
 sglist <- find.sig.genes(
     seu = seu

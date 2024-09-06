@@ -53,6 +53,9 @@ This function tests whether pathways are enriched. Specifically, for a pathway (
 \examples{
 data(toydata)
 
+seu <- toydata$seu
+pathway_list <- toydata$pathway_list
+
 CAESAR.enrich.pathway(seu, pathway_list)
 }
 \references{

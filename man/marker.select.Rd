@@ -35,6 +35,8 @@ This function selects marker genes for each cluster or cell type based on expres
 \examples{
 data(toydata)
 
+seu <- toydata$seu
+
 seu <- ProFAST::pdistance(seu, reduction = "caesar")
 sglist <- find.sig.genes(seu = seu)
 

@@ -24,6 +24,9 @@ This function computes and adds gene embeddings to a Seurat object based on a pr
 \examples{
 data(toydata)
 
+seu <- toydata$seu
+pos <- toydata$pos
+
 adjm <- ProFAST::AddAdj(as.matrix(pos))
 seu <- add.gene.embedding(
     seu = seu,

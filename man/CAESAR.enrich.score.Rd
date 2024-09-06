@@ -38,6 +38,9 @@ This function calculates spot level enrichment scores for a list of pathways bas
 \examples{
 data(toydata)
 
+seu <- toydata$seu
+pathway_list <- toydata$pathway_list
+
 enrich.score <- CAESAR.enrich.score(seu, pathway_list)
 head(enrich.score)
 

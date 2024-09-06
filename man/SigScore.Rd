@@ -30,6 +30,8 @@ The function computes the distance between gene embeddings and cell embeddings u
 library(Seurat)
 data(toydata)
 
+seu <- toydata$seu
+
 seu$cluster <- Idents(seu)
 
 gclink <- data.frame(

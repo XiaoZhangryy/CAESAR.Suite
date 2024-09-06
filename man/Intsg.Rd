@@ -38,6 +38,8 @@ This function integrates signature genes across different datasets by identifyin
 \examples{
 data(toydata)
 
+seu <- toydata$seu
+
 seu <- ProFAST::pdistance(seu, reduction = "caesar")
 sglist <- find.sig.genes(seu = seu)
 top2sgs <- Intsg(list(sglist), ntop = 2)
