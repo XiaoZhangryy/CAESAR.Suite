@@ -53,9 +53,9 @@ This function performs co-embedding of both cells and genes using the CAESAR met
 \examples{
 data(toydata)
 
-seu <- toydata$seu
-pos <- toydata$pos
-imgf <- toydata$imgf
+seu <- toydata$seu[, 1:1000]
+pos <- toydata$pos[1:1000, ]
+imgf <- toydata$imgf[1:1000, ]
 
 seu <- CAESAR.coembedding.image(seu, imgf, pos)
 print(seu)

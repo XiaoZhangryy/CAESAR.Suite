@@ -44,8 +44,8 @@ This function computes cell embedding using the CAESAR framework with FAST for d
 \examples{
 data(toydata)
 
-seu <- toydata$seu
-pos <- toydata$pos
+seu <- toydata$seu[, 1:1000]
+pos <- toydata$pos[1:1000, ]
 
 adjm <- ProFAST::AddAdj(as.matrix(pos))
 seu <- cellembedding_seurat(

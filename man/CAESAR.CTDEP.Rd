@@ -40,9 +40,10 @@ data(toydata)
 
 seu <- toydata$seu
 pathway_list <- toydata$pathway_list
+cts <- levels(seu)[1:3]
 
 enrich.score <- CAESAR.enrich.score(seu, pathway_list)
-dep.pvals <- CAESAR.CTDEP(seu, enrich.score)
+dep.pvals <- CAESAR.CTDEP(seu, enrich.score, cts = cts)
 print(dep.pvals)
 
 }
