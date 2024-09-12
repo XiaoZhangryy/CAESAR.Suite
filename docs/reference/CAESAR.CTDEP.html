@@ -37,6 +37,9 @@
     <li>
       <a href="../articles/XeniumBC.html">Xenium BC data analysis</a>
     </li>
+    <li>
+      <a href="../articles/XeniumBCEIF.html">Xenium BC extract image features</a>
+    </li>
   </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/XiaoZhangryy/CAESAR.Suite/" class="external-link">
@@ -122,24 +125,19 @@
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">seu</span> <span class="op">&lt;-</span> <span class="va">toydata</span><span class="op">$</span><span class="va">seu</span></span></span>
 <span class="r-in"><span><span class="va">pathway_list</span> <span class="op">&lt;-</span> <span class="va">toydata</span><span class="op">$</span><span class="va">pathway_list</span></span></span>
+<span class="r-in"><span><span class="va">cts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/levels.html" class="external-link">levels</a></span><span class="op">(</span><span class="va">seu</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">enrich.score</span> <span class="op">&lt;-</span> <span class="fu"><a href="CAESAR.enrich.score.html">CAESAR.enrich.score</a></span><span class="op">(</span><span class="va">seu</span>, <span class="va">pathway_list</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Calculate co-embedding distance...</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> There are 2 pathways. The largest pathway has 48 genes.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Pathways with 37 genes finished, which includes 1 pathways, elapsed time is 4.56s."</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Pathways with 48 genes finished, which includes 1 pathways, elapsed time is 0.07s."</span>
-<span class="r-in"><span><span class="va">dep.pvals</span> <span class="op">&lt;-</span> <span class="fu">CAESAR.CTDEP</span><span class="op">(</span><span class="va">seu</span>, <span class="va">enrich.score</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>package ‘purrr’ was built under R version 4.3.3</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Pathways with 37 genes finished, which includes 1 pathways, elapsed time is 4.05s.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Pathways with 48 genes finished, which includes 1 pathways, elapsed time is 0.06s.</span>
+<span class="r-in"><span><span class="va">dep.pvals</span> <span class="op">&lt;-</span> <span class="fu">CAESAR.CTDEP</span><span class="op">(</span><span class="va">seu</span>, <span class="va">enrich.score</span>, cts <span class="op">=</span> <span class="va">cts</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>package 'purrr' was built under R version 4.3.3</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">dep.pvals</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                       CAFs Cancer Epithelial   Endothelial</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GOBP_VASCULATURE_DEVELOPMENT 7.207940e-127                 1 1.768642e-131</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GOBP_T_CELL_ACTIVATION       1.240417e-132                 1  3.473181e-21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                    Myeloid Normal Epithelial          PVL</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GOBP_VASCULATURE_DEVELOPMENT  2.634230e-24      5.959407e-26 7.109218e-15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GOBP_T_CELL_ACTIVATION       3.100715e-102      5.191539e-07 2.863076e-06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                              Plasmablasts      T-cells</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GOBP_VASCULATURE_DEVELOPMENT 1.645232e-02 3.004596e-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> GOBP_T_CELL_ACTIVATION       2.356226e-14 3.480094e-45</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                              Cancer Epithelial       Myeloid</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GOBP_VASCULATURE_DEVELOPMENT                 1  2.634230e-24</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GOBP_T_CELL_ACTIVATION                       1 3.100715e-102</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

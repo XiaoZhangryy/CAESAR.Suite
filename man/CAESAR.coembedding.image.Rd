@@ -16,6 +16,7 @@ CAESAR.coembedding.image(
   q.image = 10,
   weighted = FALSE,
   approx_Phi = TRUE,
+  seed = 1,
   ...
 )
 }
@@ -42,6 +43,8 @@ CAESAR.coembedding.image(
 
 \item{approx_Phi}{Logical, indicating whether to use an approximate method for Phi matrix estimation. Default is TRUE.}
 
+\item{seed}{An integer used to set the random seed for reproducibility. Default is 1.}
+
 \item{...}{Additional arguments passed to `cellembedding_image_seurat`.}
 }
 \value{
@@ -53,9 +56,9 @@ This function performs co-embedding of both cells and genes using the CAESAR met
 \examples{
 data(toydata)
 
-seu <- toydata$seu[, 1:1000]
-pos <- toydata$pos[1:1000, ]
-imgf <- toydata$imgf[1:1000, ]
+seu <- toydata$seu
+pos <- toydata$pos
+imgf <- toydata$imgf
 
 seu <- CAESAR.coembedding.image(seu, imgf, pos)
 print(seu)

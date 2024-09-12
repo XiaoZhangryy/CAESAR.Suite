@@ -55,6 +55,9 @@
     <li>
       <a href="../articles/XeniumBC.html">Xenium BC data analysis</a>
     </li>
+    <li>
+      <a href="../articles/XeniumBCEIF.html">Xenium BC extract image features</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -81,7 +84,7 @@
       <h1 data-toc-skip>Xenium BC data analysis</h1>
                         <h4 data-toc-skip class="author">Xiao Zhang</h4>
             
-            <h4 data-toc-skip class="date">2024-09-05</h4>
+            <h4 data-toc-skip class="date">2024-09-12</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/XiaoZhangryy/CAESAR.Suite/blob/HEAD/vignettes/XeniumBC.Rmd" class="external-link"><code>vignettes/XeniumBC.Rmd</code></a></small>
       <div class="hidden name"><code>XeniumBC.Rmd</code></div>
@@ -112,8 +115,9 @@ scRNA-seq reference datasets, each with 3,000 cells;
 cells; and <code>BC_feature_imgList</code> — two feature matrices
 containing histology image information from the Xenium target datasets.
 For more details with respect to histology image feature extraction, see
-xxx. The genes of scRNA-seq reference datasets and Xenium target
-datasets are aligned. The package can be loaded with the command:</p>
+<a href="%22https://xiaozhangryy.github.io/CAESAR.Suite/articles/XeniumBCEIF.html" class="external-link">vignette</a>.
+The genes of scRNA-seq reference datasets and Xenium target datasets are
+aligned. The package can be loaded with the command:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span> <span class="co"># set a random seed for reproducibility.</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/XiaoZhangryy/CAESAR.Suite" class="external-link">CAESAR.Suite</a></span><span class="op">)</span> <span class="co"># load the package of CAESAR.Suite method</span></span>
@@ -140,8 +144,9 @@ datasets are aligned. The package can be loaded with the command:</p>
 the following command:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">githubURL</span> <span class="op">&lt;-</span> <span class="st">"https://github.com/XiaoZhangryy/CAESAR.Suite/blob/master/vignettes_data/BC_scRNAList.rda?raw=true"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span><span class="va">githubURL</span>, <span class="st">"BC_scRNAList.rda"</span>, mode<span class="op">=</span><span class="st">'wb'</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="st">"./BC_scRNAList.rda"</span><span class="op">)</span></span>
+<span><span class="va">BC_scRNAList_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"BC_scRNAList.rda"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span><span class="va">githubURL</span>, <span class="va">BC_scRNAList_file</span>, mode<span class="op">=</span><span class="st">'wb'</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="va">BC_scRNAList_file</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">BC_scRNAList</span><span class="op">)</span></span>
 <span><span class="co">#&gt; $Ref1</span></span>
@@ -155,8 +160,9 @@ the following command:</p>
 <span><span class="co">#&gt; Active assay: RNA (302 features, 0 variable features)</span></span>
 <span></span>
 <span><span class="va">githubURL</span> <span class="op">&lt;-</span> <span class="st">"https://github.com/XiaoZhangryy/CAESAR.Suite/blob/master/vignettes_data/BC_XeniumList.rda?raw=true"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span><span class="va">githubURL</span>, <span class="st">"BC_XeniumList.rda"</span>, mode<span class="op">=</span><span class="st">'wb'</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="st">"./BC_XeniumList.rda"</span><span class="op">)</span></span>
+<span><span class="va">BC_XeniumList_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"BC_XeniumList.rda"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span><span class="va">githubURL</span>, <span class="va">BC_XeniumList_file</span>, mode<span class="op">=</span><span class="st">'wb'</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="va">BC_XeniumList_file</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">BC_XeniumList</span><span class="op">)</span></span>
 <span><span class="co">#&gt; $BC1</span></span>
@@ -170,8 +176,9 @@ the following command:</p>
 <span><span class="co">#&gt; Active assay: RNA (302 features, 0 variable features)</span></span>
 <span></span>
 <span><span class="va">githubURL</span> <span class="op">&lt;-</span> <span class="st">"https://github.com/XiaoZhangryy/CAESAR.Suite/blob/master/vignettes_data/BC_feature_imgList.rda?raw=true"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span><span class="va">githubURL</span>, <span class="st">"BC_feature_imgList.rda"</span>, mode<span class="op">=</span><span class="st">'wb'</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="st">"./BC_feature_imgList.rda"</span><span class="op">)</span></span>
+<span><span class="va">BC_feature_imgList_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"BC_feature_imgList.rda"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span><span class="va">githubURL</span>, <span class="va">BC_feature_imgList_file</span>, mode<span class="op">=</span><span class="st">'wb'</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="va">BC_feature_imgList_file</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="va">BC_feature_imgList</span>, <span class="va">dim</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt;       BC1  BC2</span></span>
@@ -270,8 +277,8 @@ data<a class="anchor" aria-label="anchor" href="#detect-signature-genes-for-each
 scRNA-seq reference data. First, we calculate the co-embeddings.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">BC_scRNAList</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">BC_scRNAList</span>, <span class="fu">ProFAST</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/ProFAST/man/NCFM.html" class="external-link">NCFM</a></span>, q <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span>
-<span><span class="co">#&gt; 2024-09-05 23:08:05.688793 : ***** Finish CoFAST, 0.015 mins elapsed.</span></span>
-<span><span class="co">#&gt; 2024-09-05 23:08:07.285397 : ***** Finish CoFAST, 0.018 mins elapsed.</span></span></code></pre></div>
+<span><span class="co">#&gt; 2024-09-12 20:20:48.015214 : ***** Finish CoFAST, 0.018 mins elapsed.</span></span>
+<span><span class="co">#&gt; 2024-09-12 20:20:49.816489 : ***** Finish CoFAST, 0.021 mins elapsed.</span></span></code></pre></div>
 <p>Then, we detect signature genes.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># calculate cell-gene distance</span></span>
@@ -722,7 +729,7 @@ spatial aware co-embeddings.</p>
 <span><span class="co">#&gt; Update Lambda </span></span>
 <span><span class="co">#&gt; Update Phi </span></span>
 <span><span class="co">#&gt; iter = 30, elbo= -553988.672079, delbo=0.000384</span></span>
-<span><span class="co">#&gt; 2024-09-05 23:08:15.949064 : ***** Finish calculate CAESAR embedding, 0.101 mins elapsed.</span></span>
+<span><span class="co">#&gt; 2024-09-12 20:21:11.648035 : ***** Finish calculate CAESAR embedding, 0.294 mins elapsed.</span></span>
 <span><span class="co">#&gt; The spatial cooridnates are 2 dimensions</span></span>
 <span><span class="co">#&gt; Find the adjacency matrix by bisection method...</span></span>
 <span><span class="co">#&gt; Current radius is 200.5</span></span>
@@ -956,7 +963,7 @@ spatial aware co-embeddings.</p>
 <span><span class="co">#&gt; Update Lambda </span></span>
 <span><span class="co">#&gt; Update Phi </span></span>
 <span><span class="co">#&gt; iter = 30, elbo= -555124.780564, delbo=0.000282</span></span>
-<span><span class="co">#&gt; 2024-09-05 23:08:25.324729 : ***** Finish calculate CAESAR embedding, 0.114 mins elapsed.</span></span>
+<span><span class="co">#&gt; 2024-09-12 20:21:33.363137 : ***** Finish calculate CAESAR embedding, 0.288 mins elapsed.</span></span>
 <span><span class="co">#&gt; The spatial cooridnates are 2 dimensions</span></span>
 <span><span class="co">#&gt; Find the adjacency matrix by bisection method...</span></span>
 <span><span class="co">#&gt; Current radius is 200.5</span></span>
@@ -1326,59 +1333,59 @@ differentially enriched pathways.</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">enrich.score.BC1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/CAESAR.enrich.score.html">CAESAR.enrich.score</a></span><span class="op">(</span><span class="va">seuBC1</span>, <span class="va">pathways</span><span class="op">)</span></span>
 <span><span class="co">#&gt; There are 223 pathways. The largest pathway has 98 genes.</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 5 genes finished, which includes 32 pathways, elapsed time is 0.79s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 6 genes finished, which includes 26 pathways, elapsed time is 0.57s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 7 genes finished, which includes 20 pathways, elapsed time is 0.47s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 8 genes finished, which includes 15 pathways, elapsed time is 0.32s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 9 genes finished, which includes 7 pathways, elapsed time is 0.64s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 10 genes finished, which includes 7 pathways, elapsed time is 0.19s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 11 genes finished, which includes 9 pathways, elapsed time is 0.21s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 12 genes finished, which includes 6 pathways, elapsed time is 0.14s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 13 genes finished, which includes 5 pathways, elapsed time is 0.12s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 14 genes finished, which includes 6 pathways, elapsed time is 0.13s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 15 genes finished, which includes 3 pathways, elapsed time is 0.09s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 16 genes finished, which includes 2 pathways, elapsed time is 0.06s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 17 genes finished, which includes 2 pathways, elapsed time is 0.08s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 18 genes finished, which includes 3 pathways, elapsed time is 0.08s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 19 genes finished, which includes 5 pathways, elapsed time is 0.12s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 20 genes finished, which includes 4 pathways, elapsed time is 0.11s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 21 genes finished, which includes 4 pathways, elapsed time is 0.1s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 22 genes finished, which includes 4 pathways, elapsed time is 0.12s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 23 genes finished, which includes 1 pathways, elapsed time is 0.05s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 24 genes finished, which includes 4 pathways, elapsed time is 0.11s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 25 genes finished, which includes 5 pathways, elapsed time is 0.12s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 26 genes finished, which includes 1 pathways, elapsed time is 0.07s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 27 genes finished, which includes 1 pathways, elapsed time is 0.04s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 29 genes finished, which includes 1 pathways, elapsed time is 0.05s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 30 genes finished, which includes 5 pathways, elapsed time is 0.12s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 31 genes finished, which includes 1 pathways, elapsed time is 0.03s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 32 genes finished, which includes 4 pathways, elapsed time is 0.11s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 34 genes finished, which includes 1 pathways, elapsed time is 0.03s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 35 genes finished, which includes 1 pathways, elapsed time is 0.04s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 36 genes finished, which includes 3 pathways, elapsed time is 0.1s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 37 genes finished, which includes 4 pathways, elapsed time is 0.1s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 38 genes finished, which includes 1 pathways, elapsed time is 0.05s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 39 genes finished, which includes 2 pathways, elapsed time is 0.07s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 41 genes finished, which includes 3 pathways, elapsed time is 0.11s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 42 genes finished, which includes 1 pathways, elapsed time is 0.05s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 43 genes finished, which includes 1 pathways, elapsed time is 0.04s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 44 genes finished, which includes 2 pathways, elapsed time is 0.08s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 47 genes finished, which includes 1 pathways, elapsed time is 0.06s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 48 genes finished, which includes 1 pathways, elapsed time is 0.03s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 49 genes finished, which includes 1 pathways, elapsed time is 0.05s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 50 genes finished, which includes 1 pathways, elapsed time is 0.06s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 52 genes finished, which includes 3 pathways, elapsed time is 0.1s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 55 genes finished, which includes 1 pathways, elapsed time is 0.05s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 56 genes finished, which includes 1 pathways, elapsed time is 0.06s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 57 genes finished, which includes 1 pathways, elapsed time is 0.03s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 60 genes finished, which includes 3 pathways, elapsed time is 0.09s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 63 genes finished, which includes 1 pathways, elapsed time is 0.03s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 73 genes finished, which includes 1 pathways, elapsed time is 0.03s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 78 genes finished, which includes 1 pathways, elapsed time is 0.05s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 79 genes finished, which includes 1 pathways, elapsed time is 0.04s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 86 genes finished, which includes 1 pathways, elapsed time is 0.04s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 87 genes finished, which includes 2 pathways, elapsed time is 0.08s."</span></span>
-<span><span class="co">#&gt; [1] "Pathways with 98 genes finished, which includes 1 pathways, elapsed time is 0.04s."</span></span>
+<span><span class="co">#&gt; Pathways with 5 genes finished, which includes 32 pathways, elapsed time is 0.89s.</span></span>
+<span><span class="co">#&gt; Pathways with 6 genes finished, which includes 26 pathways, elapsed time is 0.72s.</span></span>
+<span><span class="co">#&gt; Pathways with 7 genes finished, which includes 20 pathways, elapsed time is 0.59s.</span></span>
+<span><span class="co">#&gt; Pathways with 8 genes finished, which includes 15 pathways, elapsed time is 0.36s.</span></span>
+<span><span class="co">#&gt; Pathways with 9 genes finished, which includes 7 pathways, elapsed time is 0.8s.</span></span>
+<span><span class="co">#&gt; Pathways with 10 genes finished, which includes 7 pathways, elapsed time is 0.19s.</span></span>
+<span><span class="co">#&gt; Pathways with 11 genes finished, which includes 9 pathways, elapsed time is 0.26s.</span></span>
+<span><span class="co">#&gt; Pathways with 12 genes finished, which includes 6 pathways, elapsed time is 0.17s.</span></span>
+<span><span class="co">#&gt; Pathways with 13 genes finished, which includes 5 pathways, elapsed time is 0.16s.</span></span>
+<span><span class="co">#&gt; Pathways with 14 genes finished, which includes 6 pathways, elapsed time is 0.14s.</span></span>
+<span><span class="co">#&gt; Pathways with 15 genes finished, which includes 3 pathways, elapsed time is 0.14s.</span></span>
+<span><span class="co">#&gt; Pathways with 16 genes finished, which includes 2 pathways, elapsed time is 0.08s.</span></span>
+<span><span class="co">#&gt; Pathways with 17 genes finished, which includes 2 pathways, elapsed time is 0.11s.</span></span>
+<span><span class="co">#&gt; Pathways with 18 genes finished, which includes 3 pathways, elapsed time is 0.11s.</span></span>
+<span><span class="co">#&gt; Pathways with 19 genes finished, which includes 5 pathways, elapsed time is 0.15s.</span></span>
+<span><span class="co">#&gt; Pathways with 20 genes finished, which includes 4 pathways, elapsed time is 0.18s.</span></span>
+<span><span class="co">#&gt; Pathways with 21 genes finished, which includes 4 pathways, elapsed time is 0.12s.</span></span>
+<span><span class="co">#&gt; Pathways with 22 genes finished, which includes 4 pathways, elapsed time is 0.16s.</span></span>
+<span><span class="co">#&gt; Pathways with 23 genes finished, which includes 1 pathways, elapsed time is 0.04s.</span></span>
+<span><span class="co">#&gt; Pathways with 24 genes finished, which includes 4 pathways, elapsed time is 0.14s.</span></span>
+<span><span class="co">#&gt; Pathways with 25 genes finished, which includes 5 pathways, elapsed time is 0.16s.</span></span>
+<span><span class="co">#&gt; Pathways with 26 genes finished, which includes 1 pathways, elapsed time is 0.08s.</span></span>
+<span><span class="co">#&gt; Pathways with 27 genes finished, which includes 1 pathways, elapsed time is 0.05s.</span></span>
+<span><span class="co">#&gt; Pathways with 29 genes finished, which includes 1 pathways, elapsed time is 0.08s.</span></span>
+<span><span class="co">#&gt; Pathways with 30 genes finished, which includes 5 pathways, elapsed time is 0.15s.</span></span>
+<span><span class="co">#&gt; Pathways with 31 genes finished, which includes 1 pathways, elapsed time is 0.05s.</span></span>
+<span><span class="co">#&gt; Pathways with 32 genes finished, which includes 4 pathways, elapsed time is 0.16s.</span></span>
+<span><span class="co">#&gt; Pathways with 34 genes finished, which includes 1 pathways, elapsed time is 0.04s.</span></span>
+<span><span class="co">#&gt; Pathways with 35 genes finished, which includes 1 pathways, elapsed time is 0.05s.</span></span>
+<span><span class="co">#&gt; Pathways with 36 genes finished, which includes 3 pathways, elapsed time is 0.14s.</span></span>
+<span><span class="co">#&gt; Pathways with 37 genes finished, which includes 4 pathways, elapsed time is 0.16s.</span></span>
+<span><span class="co">#&gt; Pathways with 38 genes finished, which includes 1 pathways, elapsed time is 0.03s.</span></span>
+<span><span class="co">#&gt; Pathways with 39 genes finished, which includes 2 pathways, elapsed time is 0.11s.</span></span>
+<span><span class="co">#&gt; Pathways with 41 genes finished, which includes 3 pathways, elapsed time is 0.12s.</span></span>
+<span><span class="co">#&gt; Pathways with 42 genes finished, which includes 1 pathways, elapsed time is 0.07s.</span></span>
+<span><span class="co">#&gt; Pathways with 43 genes finished, which includes 1 pathways, elapsed time is 0.04s.</span></span>
+<span><span class="co">#&gt; Pathways with 44 genes finished, which includes 2 pathways, elapsed time is 0.1s.</span></span>
+<span><span class="co">#&gt; Pathways with 47 genes finished, which includes 1 pathways, elapsed time is 0.08s.</span></span>
+<span><span class="co">#&gt; Pathways with 48 genes finished, which includes 1 pathways, elapsed time is 0.06s.</span></span>
+<span><span class="co">#&gt; Pathways with 49 genes finished, which includes 1 pathways, elapsed time is 0.05s.</span></span>
+<span><span class="co">#&gt; Pathways with 50 genes finished, which includes 1 pathways, elapsed time is 0.08s.</span></span>
+<span><span class="co">#&gt; Pathways with 52 genes finished, which includes 3 pathways, elapsed time is 0.14s.</span></span>
+<span><span class="co">#&gt; Pathways with 55 genes finished, which includes 1 pathways, elapsed time is 0.05s.</span></span>
+<span><span class="co">#&gt; Pathways with 56 genes finished, which includes 1 pathways, elapsed time is 0.07s.</span></span>
+<span><span class="co">#&gt; Pathways with 57 genes finished, which includes 1 pathways, elapsed time is 0.06s.</span></span>
+<span><span class="co">#&gt; Pathways with 60 genes finished, which includes 3 pathways, elapsed time is 0.12s.</span></span>
+<span><span class="co">#&gt; Pathways with 63 genes finished, which includes 1 pathways, elapsed time is 0.04s.</span></span>
+<span><span class="co">#&gt; Pathways with 73 genes finished, which includes 1 pathways, elapsed time is 0.03s.</span></span>
+<span><span class="co">#&gt; Pathways with 78 genes finished, which includes 1 pathways, elapsed time is 0.05s.</span></span>
+<span><span class="co">#&gt; Pathways with 79 genes finished, which includes 1 pathways, elapsed time is 0.06s.</span></span>
+<span><span class="co">#&gt; Pathways with 86 genes finished, which includes 1 pathways, elapsed time is 0.06s.</span></span>
+<span><span class="co">#&gt; Pathways with 87 genes finished, which includes 2 pathways, elapsed time is 0.09s.</span></span>
+<span><span class="co">#&gt; Pathways with 98 genes finished, which includes 1 pathways, elapsed time is 0.07s.</span></span>
 <span></span>
 <span><span class="va">dep.pvals</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/CAESAR.CTDEP.html">CAESAR.CTDEP</a></span><span class="op">(</span><span class="va">seuBC1</span>, <span class="va">enrich.score.BC1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">dep.pvals</span><span class="op">)</span></span>

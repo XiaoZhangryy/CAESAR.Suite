@@ -27,14 +27,16 @@ This vignette introduces the CAESAR.Suite workflow for the analysis of MOB ST sp
 We demonstrate the use of CAESAR to MOB data, which can be downloaded and load to the current working path by the following command:
 ```{r}
 githubURL <- "https://github.com/XiaoZhangryy/CAESAR.Suite/blob/master/vignettes_data/MOB_ST.rda?raw=true"
-download.file(githubURL, "MOB_ST.rda", mode='wb')
-load("./MOB_ST.rda")
+MOB_ST_file <- file.path(tempdir(), "MOB_ST.rda")
+download.file(githubURL, MOB_ST_file, mode='wb')
+load(MOB_ST_file)
 
 print(MOB_ST)
 
 githubURL <- "https://github.com/XiaoZhangryy/CAESAR.Suite/blob/master/vignettes_data/MOB_scRNA.rda?raw=true"
-download.file(githubURL, "MOB_scRNA.rda", mode='wb')
-load("./MOB_scRNA.rda")
+MOB_scRNA_file <- file.path(tempdir(), "MOB_scRNA.rda")
+download.file(githubURL, MOB_scRNA_file, mode='wb')
+load(MOB_scRNA_file)
 
 print(MOB_scRNA)
 ```

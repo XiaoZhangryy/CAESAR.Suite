@@ -62,6 +62,7 @@ For usage examples and guided walkthroughs, check the `vignettes` directory of t
 Tutorials for CAESAR suite:
 
 * [Analysis for Xenium breast cancer data](https://XiaoZhangryy.github.io/CAESAR.Suite/articles/XeniumBC.html)
+* [Extract image features for Xenium breast cancer data](https://XiaoZhangryy.github.io/CAESAR.Suite/articles/XeniumBCEIF.html)
 * [Analysis for ST mouse olfactory bulb data](https://XiaoZhangryy.github.io/CAESAR.Suite/articles/STMOB.html)
 
 For the users that don't have set up system properly, the following setup on different systems can be referred.

@@ -47,6 +47,31 @@ CAESAR.enrich.pathway(
 
 \item{parallel}{Logical, indicating whether to use parallel computing to speed up computation. Default is TRUE.}
 }
+\value{
+A data.frame containing the results of the test with the following columns:
+\itemize{
+    \item asy.ori.statistic - test statistic of robust original edge-count test.
+    \item asy.ori.pval - asymptotic theory based p value of robust original edge-count test.
+    \item asy.ori.pval.adj - the adjusted asymptotic theory based p value of robust original edge-count test.
+    \item perm.ori.pval - permutation-based p value of robust original edge-count test, appear when permutation-based p-value is calculated.
+    \item perm.ori.pval.adj - the adjusted permutation-based p value of robust original edge-count test, appear when permutation-based p-value is calculated.
+    \item asy.gen.statistic - test statistic of robust generalized edge-count test.
+    \item asy.gen.pval - asymptotic theory based p value of robust generalized edge-count test.
+    \item asy.gen.pval.adj - the adjusted asymptotic theory based p value of robust generalized edge-count test.
+    \item perm.gen.pval - permutation-based p value of robust generalized edge-count test, appear when permutation-based p-value is calculated.
+    \item perm.gen.pval.adj - the adjusted permutation-based p value of robust generalized edge-count test, appear when permutation-based p-value is calculated.
+    \item asy.wei.statistic - test statistic of robust weighted edge-count test.
+    \item asy.wei.pval - asymptotic theory based p value of robust weighted edge-count test.
+    \item asy.wei.pval.adj - the adjusted asymptotic theory based p value of robust weighted edge-count test.
+    \item perm.wei.pval - permutation-based p value of robust weighted edge-count test, appear when permutation-based p-value is calculated.
+    \item perm.wei.pval.adj - the adjusted permutation-based p value of robust weighted edge-count test, appear when permutation-based p-value is calculated.
+    \item asy.max.statistic - test statistic of robust max-type edge-count tests.
+    \item asy.max.pval - asymptotic theory based p value of robust max-type edge-count tests.
+    \item asy.max.pval.adj - the adjusted asymptotic theory based p value of robust max-type edge-count tests.
+    \item perm.max.pval - permutation-based p value of robust max-type edge-count tests, appear when permutation-based p-value is calculated.
+    \item perm.max.pval.adj - the adjusted permutation-based p value of robust max-type edge-count tests, appear when permutation-based p-value is calculated.
+}
+}
 \description{
 This function tests whether pathways are enriched. Specifically, for a pathway (gene set), the function will assess whether these genes are clustered in the embedding space. For more details, see Bai and Chu (2023).
 }

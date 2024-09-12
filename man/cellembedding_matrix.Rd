@@ -26,10 +26,10 @@ This function computes low-dimensional cell embeddings from a gene-by-cell matri
 \examples{
 data(toydata)
 
-seu <- toydata$seu[, 1:1000]
-pos <- toydata$pos[1:1000, ]
+seu <- toydata$seu
+pos <- toydata$pos
 
-adjm <- ProFAST::AddAdj(as.matrix(pos))
+adjm <- ProFAST::AddAdj(as.matrix(pos), radius.upper = 200)
 X <- Seurat::GetAssayData(object = seu, slot = "data", assay = "RNA")
 cellembedding <- cellembedding_matrix(
     X = X,

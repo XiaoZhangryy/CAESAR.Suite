@@ -37,6 +37,9 @@
     <li>
       <a href="../articles/XeniumBC.html">Xenium BC data analysis</a>
     </li>
+    <li>
+      <a href="../articles/XeniumBCEIF.html">Xenium BC extract image features</a>
+    </li>
   </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/XiaoZhangryy/CAESAR.Suite/" class="external-link">
@@ -106,15 +109,15 @@
 <span class="r-in"><span><span class="va">seu</span> <span class="op">&lt;-</span> <span class="va">toydata</span><span class="op">$</span><span class="va">seu</span></span></span>
 <span class="r-in"><span><span class="va">pos</span> <span class="op">&lt;-</span> <span class="va">toydata</span><span class="op">$</span><span class="va">pos</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">adjm</span> <span class="op">&lt;-</span> <span class="fu">ProFAST</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ProFAST/man/AddAdj.html" class="external-link">AddAdj</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">as.matrix</a></span><span class="op">(</span><span class="va">pos</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">adjm</span> <span class="op">&lt;-</span> <span class="fu">ProFAST</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ProFAST/man/AddAdj.html" class="external-link">AddAdj</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">as.matrix</a></span><span class="op">(</span><span class="va">pos</span><span class="op">)</span>, radius.upper <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The spatial cooridnates are 2 dimensions</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Find the adjacency matrix by bisection method...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Current radius is 44.91</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Current radius is 100.5</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Median of neighborhoods is 0</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Current radius is 66.86</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Median of neighborhoods is 3</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Current radius is 66.86</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Median of neighborhoods is 8</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Current radius is 50.75</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Median of neighborhoods is 17</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Current radius is 50.75</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Median of neighborhoods is 4</span>
 <span class="r-in"><span><span class="va">X</span> <span class="op">&lt;-</span> <span class="fu">Seurat</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/SeuratObject/man/AssayData.html" class="external-link">GetAssayData</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">seu</span>, slot <span class="op">=</span> <span class="st">"data"</span>, assay <span class="op">=</span> <span class="st">"RNA"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">cellembedding</span> <span class="op">&lt;-</span> <span class="fu">cellembedding_matrix</span><span class="op">(</span></span></span>
 <span class="r-in"><span>    X <span class="op">=</span> <span class="va">X</span>,</span></span>
@@ -123,81 +126,81 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish variable intialization </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 2, loglik= -592473.307142, dloglik=0.999724 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 2, loglik= -597713.932765, dloglik=0.999722 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 3, loglik= -570635.027994, dloglik=0.036860 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 3, loglik= -572981.633443, dloglik=0.041378 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 4, loglik= -566498.419468, dloglik=0.007249 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 4, loglik= -568540.760390, dloglik=0.007750 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 5, loglik= -564100.988273, dloglik=0.004232 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 5, loglik= -565577.203830, dloglik=0.005213 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 6, loglik= -562555.187197, dloglik=0.002740 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 6, loglik= -563808.620547, dloglik=0.003127 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 7, loglik= -561395.770192, dloglik=0.002061 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 7, loglik= -562445.787433, dloglik=0.002417 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 8, loglik= -560545.057081, dloglik=0.001515 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 8, loglik= -561479.215323, dloglik=0.001719 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 9, loglik= -559894.685465, dloglik=0.001160 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 9, loglik= -560721.438599, dloglik=0.001350 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 10, loglik= -559377.184881, dloglik=0.000924 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 10, loglik= -560111.513183, dloglik=0.001088 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 11, loglik= -558939.171437, dloglik=0.000783 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 11, loglik= -559583.251469, dloglik=0.000943 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 12, loglik= -558549.544244, dloglik=0.000697 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 12, loglik= -559112.175571, dloglik=0.000842 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 13, loglik= -558187.257006, dloglik=0.000649 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 13, loglik= -558672.733365, dloglik=0.000786 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 14, loglik= -557842.347983, dloglik=0.000618 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 14, loglik= -558253.012300, dloglik=0.000751 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 15, loglik= -557510.309326, dloglik=0.000595 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 15, loglik= -557843.814583, dloglik=0.000733 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 16, loglik= -557189.505120, dloglik=0.000575 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 16, loglik= -557444.260607, dloglik=0.000716 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 17, loglik= -556878.970007, dloglik=0.000557 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 17, loglik= -557056.241772, dloglik=0.000696 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 18, loglik= -556579.058610, dloglik=0.000539 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 18, loglik= -556685.140174, dloglik=0.000666 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 19, loglik= -556291.520167, dloglik=0.000517 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 19, loglik= -556336.124902, dloglik=0.000627 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 20, loglik= -556019.083917, dloglik=0.000490 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 20, loglik= -556014.108493, dloglik=0.000579 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 21, loglik= -555764.307816, dloglik=0.000458 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 21, loglik= -555721.816223, dloglik=0.000526 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 22, loglik= -555529.003964, dloglik=0.000423 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 22, loglik= -555459.782139, dloglik=0.000472 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 23, loglik= -555314.117003, dloglik=0.000387 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 23, loglik= -555225.898188, dloglik=0.000421 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 24, loglik= -555119.858648, dloglik=0.000350 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 24, loglik= -555016.558071, dloglik=0.000377 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Satrt ICM and E-step! </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Finish ICM and E-step! </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 25, loglik= -554945.666469, dloglik=0.000314 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iter = 25, loglik= -554827.351177, dloglik=0.000341 </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">cellembedding</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        caesar_1  caesar_2   caesar_3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24387 -5.905570  8.517869  5.3032148</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4049  -6.712402 -3.126950 -0.3465124</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11570 -8.594881 -5.489730 -2.0510725</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24387 -5.975308  8.496165  6.2566729</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4049  -7.061217 -3.932074 -0.6449155</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11570 -8.719022 -6.024967 -1.9306196</span>
 </code></pre></div>
     </div>
   </div>

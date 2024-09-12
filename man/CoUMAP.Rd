@@ -44,7 +44,7 @@ The function extracts the embeddings for both genes and cells from the specified
 \examples{
 data(toydata)
 
-seu <- toydata$seu[, 1:1000]
+seu <- toydata$seu
 
 seu <- CoUMAP(seu, gene.set = rownames(seu))
 print(seu)

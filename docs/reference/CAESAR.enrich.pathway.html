@@ -37,6 +37,9 @@
     <li>
       <a href="../articles/XeniumBC.html">Xenium BC data analysis</a>
     </li>
+    <li>
+      <a href="../articles/XeniumBCEIF.html">Xenium BC extract image features</a>
+    </li>
   </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/XiaoZhangryy/CAESAR.Suite/" class="external-link">
@@ -134,6 +137,31 @@
 <dd><p>Logical, indicating whether to use parallel computing to speed up computation. Default is TRUE.</p></dd>
 
 </dl></div>
+    <div id="value">
+    <h2>Value</h2>
+    
+
+<p>A data.frame containing the results of the test with the following columns:</p><ul><li><p>asy.ori.statistic - test statistic of robust original edge-count test.</p></li>
+<li><p>asy.ori.pval - asymptotic theory based p value of robust original edge-count test.</p></li>
+<li><p>asy.ori.pval.adj - the adjusted asymptotic theory based p value of robust original edge-count test.</p></li>
+<li><p>perm.ori.pval - permutation-based p value of robust original edge-count test, appear when permutation-based p-value is calculated.</p></li>
+<li><p>perm.ori.pval.adj - the adjusted permutation-based p value of robust original edge-count test, appear when permutation-based p-value is calculated.</p></li>
+<li><p>asy.gen.statistic - test statistic of robust generalized edge-count test.</p></li>
+<li><p>asy.gen.pval - asymptotic theory based p value of robust generalized edge-count test.</p></li>
+<li><p>asy.gen.pval.adj - the adjusted asymptotic theory based p value of robust generalized edge-count test.</p></li>
+<li><p>perm.gen.pval - permutation-based p value of robust generalized edge-count test, appear when permutation-based p-value is calculated.</p></li>
+<li><p>perm.gen.pval.adj - the adjusted permutation-based p value of robust generalized edge-count test, appear when permutation-based p-value is calculated.</p></li>
+<li><p>asy.wei.statistic - test statistic of robust weighted edge-count test.</p></li>
+<li><p>asy.wei.pval - asymptotic theory based p value of robust weighted edge-count test.</p></li>
+<li><p>asy.wei.pval.adj - the adjusted asymptotic theory based p value of robust weighted edge-count test.</p></li>
+<li><p>perm.wei.pval - permutation-based p value of robust weighted edge-count test, appear when permutation-based p-value is calculated.</p></li>
+<li><p>perm.wei.pval.adj - the adjusted permutation-based p value of robust weighted edge-count test, appear when permutation-based p-value is calculated.</p></li>
+<li><p>asy.max.statistic - test statistic of robust max-type edge-count tests.</p></li>
+<li><p>asy.max.pval - asymptotic theory based p value of robust max-type edge-count tests.</p></li>
+<li><p>asy.max.pval.adj - the adjusted asymptotic theory based p value of robust max-type edge-count tests.</p></li>
+<li><p>perm.max.pval - permutation-based p value of robust max-type edge-count tests, appear when permutation-based p-value is calculated.</p></li>
+<li><p>perm.max.pval.adj - the adjusted permutation-based p value of robust max-type edge-count tests, appear when permutation-based p-value is calculated.</p></li>
+</ul></div>
     <div id="references">
     <h2>References</h2>
     <p>Bai, Y., &amp; Chu, L. (2023). A Robust Framework for Graph-based Two-Sample Tests Using Weights. arXiv preprint arXiv:2307.12325.</p>

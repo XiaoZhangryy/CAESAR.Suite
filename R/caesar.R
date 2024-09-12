@@ -25,7 +25,7 @@
 #' seu <- toydata$seu
 #' pos <- toydata$pos
 #' 
-#' adjm <- ProFAST::AddAdj(as.matrix(pos))
+#' adjm <- ProFAST::AddAdj(as.matrix(pos), radius.upper = 200)
 #' seu <- add.gene.embedding(
 #'     seu = seu,
 #'     adjm = adjm,
@@ -98,10 +98,10 @@ add.gene.embedding <- function(
 #' @examples 
 #' data(toydata)
 #' 
-#' seu <- toydata$seu[, 1:1000]
-#' pos <- toydata$pos[1:1000, ]
+#' seu <- toydata$seu
+#' pos <- toydata$pos
 #' 
-#' adjm <- ProFAST::AddAdj(as.matrix(pos))
+#' adjm <- ProFAST::AddAdj(as.matrix(pos), radius.upper = 200)
 #' X <- Seurat::GetAssayData(object = seu, slot = "data", assay = "RNA")
 #' cellembedding <- cellembedding_matrix(
 #'     X = X,
@@ -159,10 +159,10 @@ cellembedding_matrix <- function(
 #' @examples 
 #' data(toydata)
 #' 
-#' seu <- toydata$seu[, 1:1000]
-#' pos <- toydata$pos[1:1000, ]
+#' seu <- toydata$seu
+#' pos <- toydata$pos
 #' 
-#' adjm <- ProFAST::AddAdj(as.matrix(pos))
+#' adjm <- ProFAST::AddAdj(as.matrix(pos), radius.upper = 200)
 #' seu <- cellembedding_seurat(
 #'     seu = seu,
 #'     adjm = adjm
@@ -237,8 +237,8 @@ cellembedding_seurat <- function(
 #' @examples 
 #' data(toydata)
 #' 
-#' seu <- toydata$seu[, 1:1000]
-#' pos <- toydata$pos[1:1000, ]
+#' seu <- toydata$seu
+#' pos <- toydata$pos
 #' 
 #' seu <- CAESAR.coembedding(
 #'     seu = seu,

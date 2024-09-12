@@ -244,6 +244,7 @@ cellembedding_image_seurat <- function(
 #' @param q.image An integer specifying the number of dimensions for the reduced image embeddings. Default is 10.
 #' @param weighted Logical, indicating whether to apply weighted PCA on the image features. Default is FALSE.
 #' @param approx_Phi Logical, indicating whether to use an approximate method for Phi matrix estimation. Default is TRUE.
+#' @param seed An integer used to set the random seed for reproducibility. Default is 1.
 #' @param ... Additional arguments passed to `cellembedding_image_seurat`.
 #'
 #' @return The modified Seurat object with the computed cell and gene embeddings stored in the specified reduction slot.
@@ -257,16 +258,16 @@ cellembedding_image_seurat <- function(
 #' @examples 
 #' data(toydata)
 #' 
-#' seu <- toydata$seu[, 1:1000]
-#' pos <- toydata$pos[1:1000, ]
-#' imgf <- toydata$imgf[1:1000, ]
+#' seu <- toydata$seu
+#' pos <- toydata$pos
+#' imgf <- toydata$imgf
 #' 
 #' seu <- CAESAR.coembedding.image(seu, imgf, pos)
 #' print(seu)
 CAESAR.coembedding.image <- function(
     seu, feature_img, pos, reduction.name = "caesar", q = 50, lower.med = 3.5,
     upper.med = 5.5, radius.upper = 400, q.image = 10, weighted = FALSE,
-    approx_Phi = TRUE, ...) {
+    approx_Phi = TRUE, seed = 1, ...) {
     
     if (!inherits(seu, "Seurat")) {
         stop("Input 'seu' must be a Seurat object.")
@@ -328,10 +329,10 @@ CAESAR.coembedding.image <- function(
     radius_use <- searchRadius(
         pos,
         lower.med = lower.med, upper.med = upper.med,
-        radius.upper = radius.upper
+        radius.upper = radius.upper, seed = seed
     )
 
-    set.seed(1)
+    set.seed(seed)
     n_spots <- ncol(seu)
     idx <- sample(n_spots, min(100, n_spots))
     dis <- dist(embed_img[idx, ])

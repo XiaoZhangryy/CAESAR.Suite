@@ -4,7 +4,7 @@
 \alias{auc}
 \title{Calculate Area Under the Curve (AUC) for Pathway Scores}
 \usage{
-auc(celltype, pathway.scores, return.mean = TRUE)
+auc(celltype, pathway.scores, return.mean = TRUE, seed = 1)
 }
 \arguments{
 \item{celltype}{A factor or character vector representing the cell type labels for each cell.}
@@ -12,6 +12,8 @@ auc(celltype, pathway.scores, return.mean = TRUE)
 \item{pathway.scores}{A matrix of pathway scores where rows represent cells and columns represent different pathways.}
 
 \item{return.mean}{Logical, indicating whether to return the weighted mean AUC across all cell types. If \code{FALSE}, returns the AUC for each pathway. Default is \code{TRUE}.}
+
+\item{seed}{An integer specifying the random seed for reproducibility. Default is 1.}
 }
 \value{
 If \code{return.mean = TRUE}, a numeric vector containing the weighted mean AUC. If \code{return.mean = FALSE}, a numeric matrix of AUCs where rows represent pathways and columns represent cell types.

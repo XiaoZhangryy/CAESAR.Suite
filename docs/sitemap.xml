@@ -1,37 +1,111 @@
-<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
-<url><loc>/404.html</loc></url>
-<url><loc>/articles/index.html</loc></url>
-<url><loc>/articles/STMOB.html</loc></url>
-<url><loc>/articles/XeniumBC.html</loc></url>
-<url><loc>/authors.html</loc></url>
-<url><loc>/index.html</loc></url>
-<url><loc>/reference/acc.html</loc></url>
-<url><loc>/reference/add.gene.embedding.html</loc></url>
-<url><loc>/reference/annotation_mat.html</loc></url>
-<url><loc>/reference/auc.html</loc></url>
-<url><loc>/reference/CAESAR.annotation.html</loc></url>
-<url><loc>/reference/CAESAR.coembedding.html</loc></url>
-<url><loc>/reference/CAESAR.coembedding.image.html</loc></url>
-<url><loc>/reference/CAESAR.CTDEP.html</loc></url>
-<url><loc>/reference/CAESAR.enrich.pathway.html</loc></url>
-<url><loc>/reference/CAESAR.enrich.score.html</loc></url>
-<url><loc>/reference/CAESAR.RUV.html</loc></url>
-<url><loc>/reference/Cauchy.Combination.html</loc></url>
-<url><loc>/reference/cellembedding_image_matrix.html</loc></url>
-<url><loc>/reference/cellembedding_image_seurat.html</loc></url>
-<url><loc>/reference/cellembedding_matrix.html</loc></url>
-<url><loc>/reference/cellembedding_seurat.html</loc></url>
-<url><loc>/reference/CoUMAP.html</loc></url>
-<url><loc>/reference/CoUMAP.plot.html</loc></url>
-<url><loc>/reference/find.sig.genes.html</loc></url>
-<url><loc>/reference/getneighborhood_fastcpp.html</loc></url>
-<url><loc>/reference/Human_HK_genes.html</loc></url>
-<url><loc>/reference/index.html</loc></url>
-<url><loc>/reference/Intsg.html</loc></url>
-<url><loc>/reference/marker.select.html</loc></url>
-<url><loc>/reference/markerList2mat.html</loc></url>
-<url><loc>/reference/Mouse_HK_genes.html</loc></url>
-<url><loc>/reference/SigScore.html</loc></url>
-<url><loc>/reference/toydata.html</loc></url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>/404.html</loc>
+  </url>
+  <url>
+    <loc>/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>/articles/STMOB.html</loc>
+  </url>
+  <url>
+    <loc>/articles/XeniumBC.html</loc>
+  </url>
+  <url>
+    <loc>/articles/XeniumBCEIF.html</loc>
+  </url>
+  <url>
+    <loc>/articles/XeniumBC_image_feature.html</loc>
+  </url>
+  <url>
+    <loc>/authors.html</loc>
+  </url>
+  <url>
+    <loc>/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/acc.html</loc>
+  </url>
+  <url>
+    <loc>/reference/add.gene.embedding.html</loc>
+  </url>
+  <url>
+    <loc>/reference/annotation_mat.html</loc>
+  </url>
+  <url>
+    <loc>/reference/auc.html</loc>
+  </url>
+  <url>
+    <loc>/reference/CAESAR.annotation.html</loc>
+  </url>
+  <url>
+    <loc>/reference/CAESAR.coembedding.html</loc>
+  </url>
+  <url>
+    <loc>/reference/CAESAR.coembedding.image.html</loc>
+  </url>
+  <url>
+    <loc>/reference/CAESAR.CTDEP.html</loc>
+  </url>
+  <url>
+    <loc>/reference/CAESAR.enrich.pathway.html</loc>
+  </url>
+  <url>
+    <loc>/reference/CAESAR.enrich.score.html</loc>
+  </url>
+  <url>
+    <loc>/reference/CAESAR.RUV.html</loc>
+  </url>
+  <url>
+    <loc>/reference/Cauchy.Combination.html</loc>
+  </url>
+  <url>
+    <loc>/reference/cellembedding_image_matrix.html</loc>
+  </url>
+  <url>
+    <loc>/reference/cellembedding_image_seurat.html</loc>
+  </url>
+  <url>
+    <loc>/reference/cellembedding_matrix.html</loc>
+  </url>
+  <url>
+    <loc>/reference/cellembedding_seurat.html</loc>
+  </url>
+  <url>
+    <loc>/reference/CoUMAP.html</loc>
+  </url>
+  <url>
+    <loc>/reference/CoUMAP.plot.html</loc>
+  </url>
+  <url>
+    <loc>/reference/find.sig.genes.html</loc>
+  </url>
+  <url>
+    <loc>/reference/getneighborhood_fastcpp.html</loc>
+  </url>
+  <url>
+    <loc>/reference/Human_HK_genes.html</loc>
+  </url>
+  <url>
+    <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/Intsg.html</loc>
+  </url>
+  <url>
+    <loc>/reference/marker.select.html</loc>
+  </url>
+  <url>
+    <loc>/reference/markerList2mat.html</loc>
+  </url>
+  <url>
+    <loc>/reference/Mouse_HK_genes.html</loc>
+  </url>
+  <url>
+    <loc>/reference/SigScore.html</loc>
+  </url>
+  <url>
+    <loc>/reference/toydata.html</loc>
+  </url>
 </urlset>
-

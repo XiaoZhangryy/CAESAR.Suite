@@ -37,6 +37,9 @@
     <li>
       <a href="../articles/XeniumBC.html">Xenium BC data analysis</a>
     </li>
+    <li>
+      <a href="../articles/XeniumBCEIF.html">Xenium BC extract image features</a>
+    </li>
   </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/XiaoZhangryy/CAESAR.Suite/" class="external-link">
@@ -120,7 +123,6 @@
 <span class="r-in"><span><span class="va">seu</span> <span class="op">&lt;-</span> <span class="fu">ProFAST</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ProFAST/man/pdistance.html" class="external-link">pdistance</a></span><span class="op">(</span><span class="va">seu</span>, reduction <span class="op">=</span> <span class="st">"caesar"</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Calculate co-embedding distance...</span>
 <span class="r-in"><span><span class="va">sglist</span> <span class="op">&lt;-</span> <span class="fu"><a href="find.sig.genes.html">find.sig.genes</a></span><span class="op">(</span>seu <span class="op">=</span> <span class="va">seu</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   |                                                  | 0 % ~calculating    |+++++++                                           | 12% ~00s            |+++++++++++++                                     | 25% ~00s            |+++++++++++++++++++                               | 38% ~00s            |+++++++++++++++++++++++++                         | 50% ~00s            |++++++++++++++++++++++++++++++++                  | 62% ~00s            |++++++++++++++++++++++++++++++++++++++            | 75% ~00s            |++++++++++++++++++++++++++++++++++++++++++++      | 88% ~00s            |++++++++++++++++++++++++++++++++++++++++++++++++++| 100% elapsed=00s  </span>
 <span class="r-in"><span><span class="va">top2sgs</span> <span class="op">&lt;-</span> <span class="fu">Intsg</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">sglist</span><span class="op">)</span>, ntop <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">top2sgs</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $CAFs</span>

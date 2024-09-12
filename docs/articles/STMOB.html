@@ -55,6 +55,9 @@
     <li>
       <a href="../articles/XeniumBC.html">Xenium BC data analysis</a>
     </li>
+    <li>
+      <a href="../articles/XeniumBCEIF.html">Xenium BC extract image features</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -81,7 +84,7 @@
       <h1 data-toc-skip>ST MOB data analysis</h1>
                         <h4 data-toc-skip class="author">Xiao Zhang</h4>
             
-            <h4 data-toc-skip class="date">2024-09-05</h4>
+            <h4 data-toc-skip class="date">2024-09-12</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/XiaoZhangryy/CAESAR.Suite/blob/HEAD/vignettes/STMOB.Rmd" class="external-link"><code>vignettes/STMOB.Rmd</code></a></small>
       <div class="hidden name"><code>STMOB.Rmd</code></div>
@@ -108,8 +111,9 @@ of cell types and coembeddings)</li>
 and load to the current working path by the following command:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">githubURL</span> <span class="op">&lt;-</span> <span class="st">"https://github.com/XiaoZhangryy/CAESAR.Suite/blob/master/vignettes_data/MOB_ST.rda?raw=true"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span><span class="va">githubURL</span>, <span class="st">"MOB_ST.rda"</span>, mode<span class="op">=</span><span class="st">'wb'</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="st">"./MOB_ST.rda"</span><span class="op">)</span></span>
+<span><span class="va">MOB_ST_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"MOB_ST.rda"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span><span class="va">githubURL</span>, <span class="va">MOB_ST_file</span>, mode<span class="op">=</span><span class="st">'wb'</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="va">MOB_ST_file</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">MOB_ST</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Loading required package: SeuratObject</span></span>
@@ -119,8 +123,9 @@ and load to the current working path by the following command:</p>
 <span><span class="co">#&gt; Active assay: RNA (16034 features, 0 variable features)</span></span>
 <span></span>
 <span><span class="va">githubURL</span> <span class="op">&lt;-</span> <span class="st">"https://github.com/XiaoZhangryy/CAESAR.Suite/blob/master/vignettes_data/MOB_scRNA.rda?raw=true"</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span><span class="va">githubURL</span>, <span class="st">"MOB_scRNA.rda"</span>, mode<span class="op">=</span><span class="st">'wb'</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="st">"./MOB_scRNA.rda"</span><span class="op">)</span></span>
+<span><span class="va">MOB_scRNA_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"MOB_scRNA.rda"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span><span class="va">githubURL</span>, <span class="va">MOB_scRNA_file</span>, mode<span class="op">=</span><span class="st">'wb'</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/load.html" class="external-link">load</a></span><span class="op">(</span><span class="va">MOB_scRNA_file</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">MOB_scRNA</span><span class="op">)</span></span>
 <span><span class="co">#&gt; An object of class Seurat </span></span>
@@ -205,7 +210,7 @@ scRNA-seq reference data. First, we calculate the co-embeddings.</p>
 <code class="sourceCode R"><span><span class="va">MOB_scRNA</span> <span class="op">&lt;-</span> <span class="fu">ProFAST</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ProFAST/man/NCFM.html" class="external-link">NCFM</a></span><span class="op">(</span><span class="va">MOB_scRNA</span>, q <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Warning in asMethod(object): sparse-&gt;dense coercion: allocating vector of size</span></span>
 <span><span class="co">#&gt; 1.3 GiB</span></span>
-<span><span class="co">#&gt; 2024-09-05 23:07:07.787164 : ***** Finish CoFAST, 0.127 mins elapsed.</span></span></code></pre></div>
+<span><span class="co">#&gt; 2024-09-12 20:19:55.485497 : ***** Finish CoFAST, 0.137 mins elapsed.</span></span></code></pre></div>
 <p>Then, we detect signature genes.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># calculate cell-gene distance</span></span>
@@ -443,7 +448,7 @@ information, so we can obtain spatial aware co-embeddings.</p>
 <span><span class="co">#&gt; Satrt ICM and E-step! </span></span>
 <span><span class="co">#&gt; Finish ICM and E-step! </span></span>
 <span><span class="co">#&gt; iter = 25, loglik= 97481.669671, dloglik=0.000044</span></span>
-<span><span class="co">#&gt; 2024-09-05 23:07:16.455372 : ***** Finish calculate CAESAR embedding, 0.021 mins elapsed.</span></span>
+<span><span class="co">#&gt; 2024-09-12 20:20:05.539317 : ***** Finish calculate CAESAR embedding, 0.035 mins elapsed.</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">MOB_ST</span><span class="op">)</span></span>
 <span><span class="co">#&gt; An object of class Seurat </span></span>
 <span><span class="co">#&gt; 13895 features across 280 samples within 1 assay </span></span>

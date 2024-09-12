@@ -37,6 +37,9 @@
     <li>
       <a href="../articles/XeniumBC.html">Xenium BC data analysis</a>
     </li>
+    <li>
+      <a href="../articles/XeniumBCEIF.html">Xenium BC extract image features</a>
+    </li>
   </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/XiaoZhangryy/CAESAR.Suite/" class="external-link">
@@ -75,6 +78,7 @@
 <span>  q.image <span class="op">=</span> <span class="fl">10</span>,</span>
 <span>  weighted <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  approx_Phi <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  seed <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -123,6 +127,10 @@
 
 <dt>approx_Phi</dt>
 <dd><p>Logical, indicating whether to use an approximate method for Phi matrix estimation. Default is TRUE.</p></dd>
+
+
+<dt>seed</dt>
+<dd><p>An integer used to set the random seed for reproducibility. Default is 1.</p></dd>
 
 
 <dt>...</dt>
@@ -366,7 +374,7 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> Update Lambda </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Update Phi </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> iter = 30, elbo= -553988.672079, delbo=0.000384 </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 2024-09-05 23:10:16.388884 : ***** Finish calculate CAESAR embedding, 0.243 mins elapsed.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 2024-09-12 20:18:24.358588 : ***** Finish calculate CAESAR embedding, 0.219 mins elapsed.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The spatial cooridnates are 2 dimensions</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Find the adjacency matrix by bisection method...</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Current radius is 200.5</span>

@@ -103,7 +103,7 @@ CAESAR.enrich.score <- function(
             pathwayscore[, jj] <- rowMeans(dis.mat.sim - dat_anno[, jj] > 0)
         }
         toc <- proc.time()
-        print(paste0("Pathways with ", ii, " genes finished, which includes ", length(id_pathway), " pathways, elapsed time is ", round(toc[3] - tic[3], 3), "s."))
+        message("Pathways with ", ii, " genes finished, which includes ", length(id_pathway), " pathways, elapsed time is ", round(toc[3] - tic[3], 3), "s.")
     }
 
     return(pathwayscore)
@@ -176,7 +176,7 @@ Cauchy.Combination <- function(pvals, weight = NULL) {
 #' 
 #' seu <- toydata$seu
 #' pathway_list <- toydata$pathway_list
-#' cts <- levels(seu)[1:3]
+#' cts <- levels(seu)[1:2]
 #' 
 #' enrich.score <- CAESAR.enrich.score(seu, pathway_list)
 #' dep.pvals <- CAESAR.CTDEP(seu, enrich.score, cts = cts)

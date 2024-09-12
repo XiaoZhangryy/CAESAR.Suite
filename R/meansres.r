@@ -10,6 +10,7 @@
 #' @param celltype A factor or character vector representing the cell type labels for each cell.
 #' @param pathway.scores A matrix of pathway scores where rows represent cells and columns represent different pathways.
 #' @param return.mean Logical, indicating whether to return the weighted mean AUC across all cell types. If \code{FALSE}, returns the AUC for each pathway. Default is \code{TRUE}.
+#' @param seed An integer specifying the random seed for reproducibility. Default is 1.
 #'
 #' @return If \code{return.mean = TRUE}, a numeric vector containing the weighted mean AUC. If \code{return.mean = FALSE}, a numeric matrix of AUCs where rows represent pathways and columns represent cell types.
 #'
@@ -25,7 +26,7 @@
 #'
 #' @importFrom DescTools AUC
 #' @export
-auc <- function(celltype, pathway.scores, return.mean = TRUE) {
+auc <- function(celltype, pathway.scores, return.mean = TRUE, seed = 1) {
 
     # Check if 'celltype' is a factor or character vector
     if (!is.factor(celltype) && !is.character(celltype)) {
@@ -47,7 +48,7 @@ auc <- function(celltype, pathway.scores, return.mean = TRUE) {
     n <- length(y)
 
     # Shuffle the order of cells randomly
-    set.seed(1)
+    set.seed(seed)
     id <- sample(seq_len(n), n)
     y <- y[id]
     pathway.scores <- pathway.scores[id, ]

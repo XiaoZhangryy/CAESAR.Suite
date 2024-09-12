@@ -27,7 +27,7 @@ data(toydata)
 seu <- toydata$seu
 pos <- toydata$pos
 
-adjm <- ProFAST::AddAdj(as.matrix(pos))
+adjm <- ProFAST::AddAdj(as.matrix(pos), radius.upper = 200)
 seu <- add.gene.embedding(
     seu = seu,
     adjm = adjm,

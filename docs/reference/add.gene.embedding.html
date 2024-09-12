@@ -37,6 +37,9 @@
     <li>
       <a href="../articles/XeniumBC.html">Xenium BC data analysis</a>
     </li>
+    <li>
+      <a href="../articles/XeniumBCEIF.html">Xenium BC extract image features</a>
+    </li>
   </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
   <a href="https://github.com/XiaoZhangryy/CAESAR.Suite/" class="external-link">
@@ -98,15 +101,15 @@
 <span class="r-in"><span><span class="va">seu</span> <span class="op">&lt;-</span> <span class="va">toydata</span><span class="op">$</span><span class="va">seu</span></span></span>
 <span class="r-in"><span><span class="va">pos</span> <span class="op">&lt;-</span> <span class="va">toydata</span><span class="op">$</span><span class="va">pos</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">adjm</span> <span class="op">&lt;-</span> <span class="fu">ProFAST</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ProFAST/man/AddAdj.html" class="external-link">AddAdj</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">as.matrix</a></span><span class="op">(</span><span class="va">pos</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">adjm</span> <span class="op">&lt;-</span> <span class="fu">ProFAST</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ProFAST/man/AddAdj.html" class="external-link">AddAdj</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">as.matrix</a></span><span class="op">(</span><span class="va">pos</span><span class="op">)</span>, radius.upper <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The spatial cooridnates are 2 dimensions</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Find the adjacency matrix by bisection method...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Current radius is 41.06</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Current radius is 100.5</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Median of neighborhoods is 0</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Current radius is 61.09</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Median of neighborhoods is 3</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Current radius is 61.09</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Median of neighborhoods is 6</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Current radius is 50.75</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Median of neighborhoods is 17</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Current radius is 50.75</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Median of neighborhoods is 4</span>
 <span class="r-in"><span><span class="va">seu</span> <span class="op">&lt;-</span> <span class="fu">add.gene.embedding</span><span class="op">(</span></span></span>
 <span class="r-in"><span>    seu <span class="op">=</span> <span class="va">seu</span>,</span></span>
 <span class="r-in"><span>    adjm <span class="op">=</span> <span class="va">adjm</span>,</span></span>

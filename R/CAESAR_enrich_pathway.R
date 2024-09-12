@@ -36,7 +36,7 @@ asy_gen <- function(asy_res, R1_test, R2_test) {
 #' @importFrom ade4 mstree
 kmst <- function(y = NULL, dis = NULL, k = 1) {
     if (is.null(dis) && is.null(y)) {
-        cat("Please input data or the distance matrix!\n")
+        message("Please input data or the distance matrix!\n")
         return(0)
     }
     if (is.null(dis)) dis <- pdistance.matrix(y, y)
@@ -367,6 +367,30 @@ pathway.rgTest <- function(
 #' @importFrom Seurat Embeddings
 #' @importFrom utils setTxtProgressBar txtProgressBar
 #' @importFrom stats p.adjust
+#' 
+#' @return A data.frame containing the results of the test with the following columns:
+#' \itemize{
+#'     \item asy.ori.statistic - test statistic of robust original edge-count test.
+#'     \item asy.ori.pval - asymptotic theory based p value of robust original edge-count test.
+#'     \item asy.ori.pval.adj - the adjusted asymptotic theory based p value of robust original edge-count test.
+#'     \item perm.ori.pval - permutation-based p value of robust original edge-count test, appear when permutation-based p-value is calculated.
+#'     \item perm.ori.pval.adj - the adjusted permutation-based p value of robust original edge-count test, appear when permutation-based p-value is calculated.
+#'     \item asy.gen.statistic - test statistic of robust generalized edge-count test.
+#'     \item asy.gen.pval - asymptotic theory based p value of robust generalized edge-count test.
+#'     \item asy.gen.pval.adj - the adjusted asymptotic theory based p value of robust generalized edge-count test.
+#'     \item perm.gen.pval - permutation-based p value of robust generalized edge-count test, appear when permutation-based p-value is calculated.
+#'     \item perm.gen.pval.adj - the adjusted permutation-based p value of robust generalized edge-count test, appear when permutation-based p-value is calculated.
+#'     \item asy.wei.statistic - test statistic of robust weighted edge-count test.
+#'     \item asy.wei.pval - asymptotic theory based p value of robust weighted edge-count test.
+#'     \item asy.wei.pval.adj - the adjusted asymptotic theory based p value of robust weighted edge-count test.
+#'     \item perm.wei.pval - permutation-based p value of robust weighted edge-count test, appear when permutation-based p-value is calculated.
+#'     \item perm.wei.pval.adj - the adjusted permutation-based p value of robust weighted edge-count test, appear when permutation-based p-value is calculated.
+#'     \item asy.max.statistic - test statistic of robust max-type edge-count tests.
+#'     \item asy.max.pval - asymptotic theory based p value of robust max-type edge-count tests.
+#'     \item asy.max.pval.adj - the adjusted asymptotic theory based p value of robust max-type edge-count tests.
+#'     \item perm.max.pval - permutation-based p value of robust max-type edge-count tests, appear when permutation-based p-value is calculated.
+#'     \item perm.max.pval.adj - the adjusted permutation-based p value of robust max-type edge-count tests, appear when permutation-based p-value is calculated.
+#' }
 #'
 #' @examples 
 #' data(toydata)
