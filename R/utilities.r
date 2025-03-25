@@ -1,3 +1,8 @@
+is_interactive <- function() {
+    interactive() && (Sys.getenv("RSTUDIO") == "1" || isatty(stdin()))
+}
+
+
 # Log Time Difference with Customizable Output
 .logDiffTime <- function(main = "", t1 = NULL, verbose = TRUE, addHeader = FALSE,
                          t2 = Sys.time(), units = "mins", header = "*****",
@@ -67,3 +72,4 @@ pdistance.matrix <- function(Ar, Br, eta = 1e-10) {
     colnames(dis) <- rownames(Br)
     return(dis)
 }
+

@@ -11,8 +11,9 @@ vignette: >
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
+    eval = requireNamespace("ProFAST", quietly = TRUE),
+    collapse = TRUE,
+    comment = "#>"
 )
 ```
 
@@ -25,7 +26,7 @@ This vignette introduces the CAESAR.Suite workflow for the analysis of Xenium BC
 * Downstream analysis (i.e. , signature gene analysis, visualization of cell types and coembeddings)
 
 ## Load and quality control both reference and target data
-We demonstrate the application of CAESAR.Suite to Xenium data. In this vignette, the input data includes: `BC_scRNAList` — two scRNA-seq reference datasets, each with 3,000 cells; `BC_XeniumList` — two Xenium target datasets, each with 3,000 cells; and `BC_feature_imgList` — two feature matrices containing histology image information from the Xenium target datasets. For more details with respect to histology image feature extraction, see [vignette]("https://xiaozhangryy.github.io/CAESAR.Suite/articles/XeniumBCEIF.html). The genes of scRNA-seq reference datasets and Xenium target datasets are aligned. The package can be loaded with the command:
+We demonstrate the application of CAESAR.Suite to Xenium data. In this vignette, the input data includes: `BC_scRNAList` — two scRNA-seq reference datasets, each with 3,000 cells; `BC_XeniumList` — two Xenium target datasets, each with 3,000 cells; and `BC_feature_imgList` — two feature matrices containing histology image information from the Xenium target datasets. For more details with respect to histology image feature extraction, see [vignette](https://xiaozhangryy.github.io/CAESAR.Suite/articles/XeniumBCEIF.html). The genes of scRNA-seq reference datasets and Xenium target datasets are aligned. The package can be loaded with the command:
 ```{r}
 set.seed(1) # set a random seed for reproducibility.
 library(CAESAR.Suite) # load the package of CAESAR.Suite method
@@ -308,12 +309,23 @@ cowplot::plot_grid(plotlist = plots, ncol = 1)
 ## Enrichment analysis
 Next, we show how to use CAESAR for enrichment analysis. Here we choose GOBP pathways as an example. Let's first get some pathways.
 ```{r}
-pathway_list <- msigdbr(species = "Homo sapiens", category = "C5", subcategory = "GO:BP") %>%
-    group_by(gs_name) %>%
-    summarise(genes = list(intersect(gene_symbol, common_genes))) %>%
-    tibble::deframe()
-n.pathway_list <- sapply(pathway_list, length)
-pathway_list <- pathway_list[n.pathway_list >= 5]
+# pathway_list <- msigdbr(species = "Homo sapiens", category = "C5", subcategory = "GO:BP") %>%
+#     group_by(gs_name) %>%
+#     summarise(genes = list(intersect(gene_symbol, common_genes))) %>%
+#     tibble::deframe()
+# n.pathway_list <- sapply(pathway_list, length)
+# pathway_list <- pathway_list[n.pathway_list >= 5]
+
+# --------------------------------------------
+# To avoid potential issues caused by differences in operating systems,
+# R package versions, and other uncontrollable factors across environments,
+# we pre-generated the 'pathway_list' object using the code above
+# --------------------------------------------
+
+githubURL <- "https://github.com/XiaoZhangryy/CAESAR.Suite/blob/master/vignettes_data/pathway4BC.rda?raw=true"
+pathway4BC_file <- file.path(tempdir(), "pathway4BC.rda")
+download.file(githubURL, pathway4BC_file, mode='wb')
+load(pathway4BC_file)
 
 print(head(pathway_list))
 ```

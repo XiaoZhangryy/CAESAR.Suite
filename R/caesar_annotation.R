@@ -340,10 +340,22 @@ annotation_mat <- function(
             )
             dis.mat.sim <- Reduce(cbind, dis.mat.sim)
         } else {
-            dis.mat.sim <- pbapply::pbsapply(
-                1:n_fake, fake_dis_fun,
-                distce = distce, weight.mat = weight.mat
-            )
+            # dis.mat.sim <- pbapply::pbsapply(
+            #     1:n_fake, fake_dis_fun,
+            #     distce = distce, weight.mat = weight.mat
+            # )
+            
+            if (is_interactive()) {
+                dis.mat.sim <- pbapply::pbsapply(
+                    1:n_fake, fake_dis_fun,
+                    distce = distce, weight.mat = weight.mat
+                )
+            } else {
+                dis.mat.sim <- sapply(
+                    1:n_fake, fake_dis_fun,
+                    distce = distce, weight.mat = weight.mat
+                )
+            }
         }
 
         # Calculate confidence as the proportion of randomized distances greater than the real distances

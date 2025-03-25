@@ -249,10 +249,22 @@ CAESAR.CTDEP <- function(
             pvals_mat[, ct] <- Reduce(c, pvals)
         } else {
             # Serial computation
-            pvals_mat[, ct] <- pbapply::pbsapply(
-                1:p, wtest_fun,
-                ps = pathway_scores, id1 = id1, id2 = id2
-            )
+            # pvals_mat[, ct] <- pbapply::pbsapply(
+            #     1:p, wtest_fun,
+            #     ps = pathway_scores, id1 = id1, id2 = id2
+            # )
+
+            if (is_interactive()) {
+                pvals_mat[, ct] <- pbapply::pbsapply(
+                    1:p, wtest_fun,
+                    ps = pathway_scores, id1 = id1, id2 = id2
+                )
+            } else {
+                pvals_mat[, ct] <- sapply(
+                    1:p, wtest_fun,
+                    ps = pathway_scores, id1 = id1, id2 = id2
+                )
+            }
         }
     }
 
